@@ -1,0 +1,11 @@
+.photo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media(min-width: 1200px) {
+  .photo {
+    font-size: 0;
+  }
+}

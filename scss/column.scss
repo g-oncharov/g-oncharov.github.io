@@ -1,0 +1,14 @@
+@media(min-width: 1200px) {
+  .column__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .column1 {
+    width: 50%;
+  }
+
+  .column2 {
+    width: 50%;
+    background-color: #191919;
+  }
+}

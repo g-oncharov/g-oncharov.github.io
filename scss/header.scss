@@ -1,0 +1,31 @@
+.main-header {
+  box-sizing: border-box;
+  height: 75px;
+  padding-top: 15px;
+
+  box-shadow: 0 -4px 12px 1px black;
+    img {
+      display: block;
+      width: 190px;
+      margin: 0 auto;
+    }
+}
+
+@media(min-width: 425px) {
+  .main-header {
+    height: 80px;
+      img {
+        width: 210px;
+      }
+  }
+}
+@media(min-width: 768px) {
+  .main-header {
+    height: 100px;
+    padding-top: 25px;
+    background-image: url(../../img/header-bg.png);
+      img {
+        width: 240px;
+      }
+  }
+}
