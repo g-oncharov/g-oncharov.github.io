@@ -1,0 +1,296 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #f8f5f2;
+  z-index: 999;
+  padding: 30px 6.25% 36px;
+}
+
+.modal__login {
+  display: none;
+  top: 135px;
+  box-shadow: 0px 0px 11px 4px rgba(0,0,0,0.3);
+  h3 {
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 2px 0;
+  }
+  p {
+    padding: 12px 0;
+    padding-bottom: 24px;
+    margin: 0;
+    text-align: center;
+  }
+
+    input {
+      width: 100%;
+      box-sizing: border-box;
+      margin-bottom: 6px;
+      border: 1px solid #e5ddd5;
+      padding: 10px 50px 15px 18px;
+      font-size: 18px;
+      outline: none;
+    }
+
+    input:hover {
+      border-color: #d5c9bd;
+    }
+
+    input:focus {
+      border-color: #999999;
+    }
+
+    input::placeholder {
+      color: #000000;
+    }
+
+    .block-button {
+      padding-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+
+        button {
+          width: 46.5%;
+          margin-top: 27px;
+          outline: none;
+          padding: 13px 0 14px;
+        }
+
+        .button--login {
+          background-color: $brown;
+          color: #ffffff;
+            span {
+              display: none;
+            }
+        }
+
+        .button--login:hover {
+          background-color: #6a4d38;
+        }
+
+        .button--login:active {
+          color: #978374;
+        }
+
+        .button--close {
+          background-color: transparent;
+          margin-top: 27px;
+          margin-left: auto;
+          width: 46.5%;
+        }
+    }
+
+    .label__checkbox {
+      position: relative;
+      cursor: pointer;
+      user-select: none;
+      padding: 7px 0 6px;
+      padding-left: 46px;
+      font-size: 18px;
+      width: 60%;
+      box-sizing: border-box;
+    }
+
+    .input__checkbox + label::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 31px;
+      height: 31px;
+      margin-top: -16px;
+      border: 1px solid #e5ddd5;
+      background-color: #ffffff;
+    }
+
+    .input__checkbox + label:hover::before {
+      border-color: #d5c9bd;
+    }
+
+    .input__checkbox + label:active::before {
+      background-color: #d5c9bd;
+      background-image: url("../img/checkbox-on.png");
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+    }
+
+    .input__checkbox:checked + label::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      margin-top: -16px;
+      left: 0;
+      width: 31px;
+      height: 31px;
+      border: 1px solid #e5ddd5;
+      background-color: #ffffff;
+      background-image: url("../img/checkbox-on.png");
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+    }
+
+    .input__checkbox:checked + label:hover::before,
+    .input__checkbox:checked + label:focus::before {
+      border-color: #d5c9bd;
+    }
+
+    .input__checkbox:checked + label:active::before {
+      background-color: #d5c9bd;
+      background-image: none;
+    }
+
+    .input__checkbox + label[disabled]::before {
+      opacity: 0.1;
+      cursor: default;
+    }
+
+    .input__checkbox + label[disabled]:hover::before,
+    .input__checkbox + label[disabled]:focus::before {
+      opacity: 0.1;
+      cursor: default;
+    }
+
+    .block-button__remove-password {
+      color: #000000;
+      padding: 7px 0 6px;
+      font-size: 18px;
+      text-align: right;
+      margin-left: auto;
+      width: 40%;
+      box-sizing: border-box;
+    }
+
+    .block-button__remove-password:hover,
+    .block-button__remove-password:active {
+      color: $brown;
+    }
+}
+
+
+.modal-open {
+  display: block;
+}
+
+@media (min-width: $tablet-width) {
+  .modal__login {
+    width: 60%;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 30px 9.2% 56px;
+    top: 135px;
+    top: 129px;
+
+    h3 {
+      font-size: 40px;
+      padding: 28px 0;
+      padding-bottom: 6px;
+    }
+    p {
+      padding: 12px 0;
+      padding-bottom: 24px;
+    }
+
+      input {
+        padding: 18px 50px 19px 23px;
+        font-size: 24px;
+      }
+
+      input:hover {
+        border-color: #d5c9bd;
+      }
+
+      input:focus {
+        border-color: #999999;
+      }
+
+      input::placeholder {
+        color: #000000;
+      }
+
+      .block-button {
+        padding-top: 18px;
+        display: flex;
+        flex-wrap: wrap;
+
+          button {
+            width: 46.5%;
+            margin-top: 27px;
+            outline: none;
+            padding: 13px 0 14px;
+          }
+
+          .button--login {
+            margin-top: 31px;
+            width: 100%;
+              span {
+                display: inline;
+              }
+          }
+
+          .button--login:hover {
+            background-color: #6a4d38;
+          }
+
+          .button--login:active {
+            color: #978374;
+          }
+
+          .button--close {
+            position: absolute;
+            right: -104px;
+            top: 61px;
+            background-color: transparent;
+            margin: 0;
+            padding: 0;
+            width: 27px;
+            height: 27px;
+            font-size: 0;
+            border: 0;
+
+
+              &::before {
+                content: "";
+                position: absolute;
+                right: 13px;
+                top: -4px;
+                width: 2px;
+                height: 36px;
+                background-color: #ffffff;
+                transform: rotate(45deg);
+              }
+
+              &::after {
+                content: "";
+                position: absolute;
+                right: 13px;
+                top: -4px;
+                width: 2px;
+                height: 36px;
+                background-color: #ffffff;
+                transform: rotate(-45deg);
+              }
+          }
+      }
+
+      .label__checkbox {
+        position: relative;
+        cursor: pointer;
+        user-select: none;
+        padding: 7px 0 6px;
+        padding-left: 46px;
+        font-size: 18px;
+        width: 60%;
+        box-sizing: border-box;
+      }
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .modal__login {
+    padding: 30px 70px 56px;
+    width: 460px;
+  }
+}

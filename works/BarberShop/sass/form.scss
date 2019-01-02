@@ -1,0 +1,39 @@
+@import "main";
+
+@import "photo__header";
+@import "form__form";
+@import "photo__footer";
+@import "modal";
+
+.page-footer {
+   .page-footer__wrapper {
+     border: 0;
+
+     .page-footer__copyright {
+       padding-bottom: 24px;
+     }
+   }
+   .social__link--facebook {
+       background-position: 51% 46%;
+   }
+   .social__link--instagram {
+       background-position: 51% 49%;
+   }
+}
+
+@media (min-width: $tablet-width) {
+  .page-footer {
+    padding-bottom: 0;
+  }
+  .page-footer__social {
+    padding-top: 27px;
+  }
+}
+@media (min-width: $desktop-width) {
+  .page-footer__block {
+    padding-bottom: 61px;
+  }
+  .page-footer__social {
+    padding-top: 51px;
+  }
+}

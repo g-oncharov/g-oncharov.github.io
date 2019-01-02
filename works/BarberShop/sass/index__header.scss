@@ -1,0 +1,496 @@
+.page-header {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.page-heder__logo {
+  display: block;
+  background-color: $veryblackgray;
+  min-height: 85px;
+  box-sizing: border-box;
+  text-align: center;
+  outline: none;
+
+    img {
+      padding-top: 29px;
+      width: 226px;
+    }
+}
+
+.main-nav {
+  position: relative;
+  min-height: 50px;
+  color: #ffffff;
+
+    .site-list {
+    background-color: $brown;
+    }
+    .user-list {
+    background-color: $darkbrown;
+    }
+    .main-nav__wrapper {
+      position: absolute;
+      width: 100%;
+      z-index: 1;
+    }
+}
+
+.site-list__item,
+.user-list__item {
+      a {
+        color: #ffffff;
+        display: block;
+        height: 30px;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 18px;
+        border-top: 1px solid #886e5b;
+        border-bottom: 1px solid #71543f;
+        padding-top: 14px;
+        padding-bottom: 5px;
+        padding-left: 20px;
+    }
+
+}
+
+.user-list__item {
+        a {
+          text-transform: none;
+          font-weight: 400;
+          border-top: none;
+          padding-left: 48px;
+          position: relative;
+      }
+      & a::before {
+        content: "";
+        position: absolute;
+        left: 20px;
+        top: 17px;
+
+        background-image: url(../img/login-tablet.png);
+        background-repeat: no-repeat;
+
+        width: 20px;
+        height: 20px;
+      }
+}
+
+.main-nav__toggle {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 70px;
+  height: 50px;
+  font-size: 0;
+  border: none;
+  cursor: pointer;
+  background-color: #6a4d38;
+  z-index: 2;
+  outline: none;
+
+    &:hover {
+      background-color: #624530;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 15px;
+      left: 17px;
+      width: 36px;
+      height: 2px;
+      background-color: #fff;
+      box-shadow: 0 9px 0 0 #fff, 0 18px 0 0 #fff;
+    }
+
+    &:active {
+      background-color: #624530;
+    }
+
+    &:active::before {
+      content: "";
+      background-color: #917d6f;
+      box-shadow: 0 9px 0 0 #917d6f, 0 18px 0 0 #917d6f;
+    }
+
+}
+
+.main-nav {
+  .main-nav__item{
+  display: none;
+  }
+}
+
+.main-nav {
+   .site-list__item--active {
+    display: block;
+    text-align: center;
+    padding-right: 20px;
+      a {
+        padding-top: 13px;
+        padding-bottom: 7px;
+        border: none;
+      }
+
+      span {
+        display: none;
+      }
+  }
+}
+
+.main-nav__toggle2 {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 70px;
+  height: 50px;
+  font-size: 0;
+  border: none;
+  background: #6a4d38;
+  z-index: 2;
+  outline: none;
+
+    &:hover {
+      background-color: #624530;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 32px;
+      top: 8px;
+      width: 2px;
+      height: 35px;
+      background-color: #ffffff;
+      transform: rotate(45deg);
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 16px;
+      top: 24px;
+      width: 35px;
+      height: 2px;
+      background-color: #ffffff;
+      transform: rotate(45deg);
+    }
+
+    &:active {
+      background-color: #624530;
+    }
+
+    &:active::before,
+    &:active::after {
+      content: "";
+      background-color: #917d6f;
+    }
+
+}
+
+.main-nav--closed  {
+
+    .main-nav__toggle {
+      display: none;
+    }
+    .main-nav__toggle2 {
+      display: block;
+    }
+
+    .main-nav__list {
+    margin-left: 70px;
+    box-shadow: inset 10px 0px 8px -5px rgba(0,0,0,0.25);
+    }
+
+    .main-nav__item {
+      display: block;
+      text-align: left;
+    }
+
+.site-list__item {
+      &:hover {
+        background-color: #755a46;
+        box-shadow: inset 10px 0px 8px -5px rgba(0,0,0,0.25);
+      }
+      &:active {
+        background-color: #6a4d38;
+        box-shadow: inset 10px 0px 8px -5px rgba(0,0,0,0.25);
+          a {
+            color: #978374;
+          }
+      }
+}
+
+.site-list__item--active {
+      padding-left: 0px;
+       a {
+         padding-top: 14px;
+         padding-bottom: 5px;
+         border-top: 1px solid #886e5b;
+         border-bottom: 1px solid #71543f;
+          color: #ffffff;
+       }
+    }
+}
+
+.main-nav--closed .site-list__item--active {
+  background-color:  $brown;
+  box-shadow: inset 10px 0px 8px -5px rgba(0,0,0,0.25);
+}
+
+@media (min-width: $tablet-width) {
+  .page-heder__logo {
+    order: 2;
+    height: 397px;
+    background-color: #000000;
+    background-image: url(../img/back-desktop.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    img {
+      padding: 0;
+      padding-top: 38px;
+      padding-right: 0;
+
+      width: 370px;
+    }
+  }
+
+  .main-nav {
+    display: flex;
+    justify-content: space-between;
+
+    min-height: 72px;
+
+    background-color: #000000;
+  }
+
+  .site-list {
+    width: 89%;
+    min-height: 70px;
+  }
+
+  .main-nav__toggle {
+    display: none;
+  }
+
+  .main-nav--closed {
+
+    .main-nav__toggle2 {
+      display: none;
+    }
+
+    .main-nav__list {
+      margin-left: 0;
+    }
+
+    .site-list__item--active {
+      background-color: transparent;
+    }
+  }
+
+  .main-nav {
+    .main-nav__item{
+      display: block;
+    }
+
+    .main-nav__wrapper {
+      display: flex;
+      justify-content: space-between;
+      width: 83%;
+      max-width: 860px;
+      margin: 0 auto;
+      position: relative;
+
+      .user-list__login::before {
+          left: 13px;
+      }
+    }
+
+    .site-list,
+    .user-list {
+      background-color: #000000;
+    }
+
+    .site-list {
+      display: flex;
+      justify-content: space-between;
+        width: 87.5%;
+    }
+
+  .site-list__item {
+        a {
+          padding: 0;
+          padding-top: 26px;
+
+        }
+  }
+  .user-list__item {
+    a {
+      padding: 26px 0;
+      font-size: 0;
+      min-width: 60px;
+    }
+  }
+
+  .site-list__item,
+  .user-list__item {
+          a {
+            display: block;
+            height: 100%;
+            border: none;
+            line-height: 20px;
+            box-sizing: border-box;
+        }
+        a:hover {
+          color: $brown;
+        }
+        a:active {
+          color: #4d4d4d;
+        }
+  }
+
+  .user-list__login {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 22px;
+      top: 29px;
+
+      background-image: url(../img/login-tablet.png);
+      background-repeat: no-repeat;
+
+      width: 20px;
+      height: 20px;
+
+      opacity: 0.3;
+      transition: 0.25s;
+    }
+
+    &:hover::before {
+      background-image: url(../img/login-tablet--hover.png);
+
+      opacity: 1;
+    }
+
+    &:active::before {
+      background-image: url(../img/login-tablet.png);
+
+      opacity: 0.3;
+    }
+
+  }
+
+    .site-list__item--active {
+      text-align: left;
+      padding-right: 0;
+      position: relative;
+
+          span {
+            display: inline;
+          }
+
+        &::after {
+          content: "";
+
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: -2px;
+
+          background-color: $brown;
+
+          height: 3px;
+        }
+    }
+  }
+}
+@media (min-width: $desktop-width) {
+
+  .page-header {
+    .page-heder__logo {
+      height: 648px;
+    }
+
+    img {
+      padding: 0;
+      padding-top: 56px;
+    }
+  }
+
+  .main-nav {
+
+
+    .main-nav__wrapper {
+      width: 1020px;
+      max-width: 100%;
+
+      .user-list__login::before {
+        left: 27px;
+      }
+    }
+
+    .site-list {
+      width: 750px;
+      margin-left: 28px;
+    }
+
+    .user-list {
+      width: 129px;
+      margin-right: 31px;
+        a {
+          text-decoration: none;
+          text-transform: uppercase;
+          font-weight: 700;
+          font-size: 18px;
+        }
+    }
+
+    .site-list__item,
+    .user-list__item {
+       a {
+         padding: 26px 33px 26px 32px;
+       }
+
+        a:hover {
+          background-color: #ffffff;
+          color: #000000;
+        }
+
+        a:active {
+          color: #b2b2b2;
+        }
+    }
+  }
+
+    .main-nav {
+        .site-list__item--active::after {
+        display: none;
+      }
+        .user-list__item {
+        a {
+        padding: 26px 0px 26px 62px;
+        }
+      }
+      .user-list__login {
+
+        &:hover::before {
+          background-image: url(../img/login-desktop-hover.png);
+
+          opacity: 1;
+        }
+
+        &:active::before {
+          background-image: url(../img/login-desktop-down.png);
+
+          opacity: 1;
+        }
+      }
+    }
+}

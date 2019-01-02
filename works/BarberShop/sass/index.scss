@@ -1,0 +1,41 @@
+@import "main";
+
+// html {
+//
+//   background-image: url(../img/barbershop-photo-mobile.jpg);
+//   background-repeat: no-repeat;
+//   background-position: 50% -66%;
+// }
+//
+// @media (min-width: $tablet-width) {
+//   html {
+//     background-image: url(../img/barbershop-index-tablet.jpg);
+//     background-repeat: no-repeat;
+//     background-position: 50% 0%;
+//   }
+// }
+//
+// @media (min-width: $desktop-width) {
+//   html {
+//     background-image: url(../img/barbershop-index-desktop.jpg);
+//     background-repeat: no-repeat;
+//     background-position: 50% 0%;
+// }
+// }
+//
+// body {
+//
+//   opacity: 0.5;
+// }
+
+.container {
+  padding: 0 20px;
+}
+
+@import "index__header";
+@import "index__statistics";
+@import "index__advantages";
+@import "index__news";
+@import "index__reviews";
+@import "index__footer";
+@import "modal";

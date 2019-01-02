@@ -1,0 +1,375 @@
+.photo {
+  position: relative;
+  padding-bottom: 48px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      height: 34px;
+      width: 100%;
+      background-image: url(../img/corner-light.svg);
+      background-color: $darkgray;
+    }
+
+  .photo__title {
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+}
+
+.photo__link {
+  display: none;
+}
+
+.photo__list {
+  .photo__item {
+    position: relative;
+    width: 87.5%;
+    max-width: 500px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0;
+    font-size: 0;
+    margin-bottom: 20px;
+  }
+
+  .best-job {
+    position: absolute;
+    top: 400px;
+    left: 0;
+    padding: 15px 26px;
+    padding-right: 10px;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1;
+    text-transform: uppercase;
+    color: #ffffff;
+    background-color: $brown;
+    z-index: 1;
+
+      &::after {
+        position: absolute;
+        content: "";
+        top: 0;
+        bottom: 0;
+        right: -18px;
+        border: 25px solid #816550;
+        border-right: 10px solid transparent;
+        z-index: -1;
+      }
+  }
+}
+
+.photo__picture {
+  border: 1px solid #e5ddd5;
+  border-bottom: 0;
+
+  img {
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+.photo__block {
+  border: 1px solid #e5ddd5;
+  border-top: 0;
+  min-height: 162px;
+}
+
+.photo__block2 {
+  min-height: 191px;
+}
+
+.photo__block4 {
+  min-height: 215px;
+}
+
+.block__text {
+  width: 84%;
+  margin: 0 auto;
+  padding-bottom: 10px;
+
+    .text__name {
+      padding: 19px 0 12px;
+      margin: 0;
+      font-size: 24px;
+    }
+
+    .text__info {
+      margin: 0;
+      padding: 0;
+    }
+}
+
+.category-block {
+  width: 92%;
+  margin: 0 auto;
+
+  font-size: 16px;
+  text-transform: uppercase;
+  padding-bottom: 11px;
+
+    .category-var {
+      display: inline-block;
+      padding: 10px 0;
+      padding-left: 57px;
+
+      background-repeat: no-repeat;
+    }
+
+
+    .category-var--haircut {
+      background-image: url("../img/icon-scissors.svg");
+      background-size: 20px 22px;
+      background-position: 24% 50%;
+    }
+
+    .category-var--beard {
+      background-image: url("../img/icon-beard.svg");
+      background-size: 21px 23px;
+      background-position: 19% 44%;
+    }
+
+    .category-var--mustache {
+      background-image: url("../img/icon-mustache.svg");
+      background-size: 45px 12px;
+      background-position: 20% 54%;
+
+      padding-left: 67px;
+    }
+}
+@media (min-width: $tablet-width) {
+  .photo {
+    padding-bottom: 62px;
+    &::after {
+      height: 41px
+    }
+  }
+
+  .photo__wrapper {
+    width: 83.3%;
+    margin: 0 auto;
+
+    .photo__title {
+      text-align: left;
+      float: left;
+      font-size: 40px;
+      margin: 0;
+      padding-top: 62px;
+      padding-bottom: 50px;
+    }
+
+  }
+
+  .photo__link {
+    display: block;
+    float: right;
+    margin-top: 54px;
+    padding-right: 35px;
+    padding-left: 35px;
+  }
+
+  .photo__list {
+    clear: both;
+    .photo__item {
+      width: 100%;
+      max-width: 100%;
+      display: flex;
+      margin-bottom: 41px;
+    }
+
+    .best-job {
+      top: 35px;
+      left: -2px;
+      padding: 15px 20px;
+      padding-right: 16px;
+        &::after {
+        }
+    }
+  }
+
+  .photo__picture {
+   border: 0;
+   width: 270px;
+   min-width: 270px;
+    img {
+      height: 100%;
+      margin: 0;
+      margin-left: auto;
+    }
+  }
+
+  .photo__block {
+    border: 1px solid #e5ddd5;
+    width: 72.3%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .block__text {
+    padding: 0;
+    padding-left: 40px;
+      .text__name {
+        padding: 39px 0 24px;
+      }
+
+      .text__info {
+        padding-right: 40px;
+      }
+  }
+
+   .photo__block1 {
+
+     .block__text {
+         .text__name {
+           padding: 42px 0 24px;
+         }
+     }
+
+     .category-block {
+       padding-bottom: 28px;
+     }
+   }
+
+   .photo__block2 {
+     min-height: 292px;
+
+     .block__text {
+         .text__name {
+           padding: 39px 0 24px;
+         }
+
+         .text__info {
+           padding-right: 60px;
+         }
+     }
+
+   }
+
+  .photo__block4 {
+     .block__text {
+         .text__info {
+          padding-right: 85px;
+         }
+     }
+   }
+
+  .category-block {
+    width: calc(100% - 32px);
+    padding-bottom: 33px;
+    padding-left: 32px;
+      .category-var {
+      }
+
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .photo {
+    padding-bottom: 89px;
+    &::after {
+      display: none;
+    }
+  }
+  .photo__wrapper {
+    width: 960px;
+    .photo__title {
+      padding-bottom: 91px
+    }
+  }
+
+  .photo__picture {
+    border: 0;
+    width: auto;
+    flex-grow: 0;
+    flex-shrink: 0;
+      img {
+        margin: 0;
+      }
+  }
+  .photo__block {
+    flex-grow: 0;
+    width: 100%;
+  }
+
+  .photo__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .best-job {
+      top: 26px;
+      right: 0;
+      left: auto;
+      padding: 15px 24px;
+      padding-right: 20px;
+
+      &::after {
+        left: -10px;
+        right: auto;
+        border-left: 10px solid transparent;
+      }
+    }
+
+   .photo__item {
+     flex-direction: column;
+     width: 294px;
+     margin: 0;
+   }
+
+  .photo__item1 {
+    flex-direction: row;
+    width: 960px;
+    margin-bottom: 41px;
+  }
+  }
+
+  .photo__block {
+    min-height: 246px;
+    box-sizing: border-box;
+    .category-block {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-left: 13px;
+      width: 210px;
+      padding: 0;
+      padding-bottom: 24px;
+    }
+
+    .block__text {
+      padding: 0;
+      padding-left: 20px;
+        .text__name {
+          padding: 27px 0 24px;
+        }
+        .text__info {
+          padding-right: 10px;
+        }
+    }
+  }
+
+  .photo__block1 {
+    .block__text {
+      padding-top: 100px;
+      padding-left: 0;
+
+        .text__info {
+          padding-right: 100px;
+        }
+    }
+
+    .category-block {
+      padding: 0px;
+      padding-bottom: 21px;
+      width: 350px;
+      br {
+        display: none;
+      }
+    }
+  }
+}
