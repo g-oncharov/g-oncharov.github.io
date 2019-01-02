@@ -1,0 +1,62 @@
+.photo-page {
+
+.company-block {
+  a {
+    padding-top: 40px;
+  }
+}
+
+.social-block {
+  .icon {
+    margin-top: 21px;
+  }
+}
+}
+
+@media(min-width: 660px) {
+.photo-page {
+    .company-block a {
+      padding-top: 6px;
+    }
+
+    .main__footer .info-block {
+      height: 88px;
+     h2 {
+        padding-top: 38px;
+      }
+    }
+
+    .main__footer {
+      max-width: 799px;
+      .social-block {
+        padding-top: 17px;
+      }
+
+      .company-block {
+        a:hover::after {
+          top: 6px;
+        }
+      }
+    }
+}
+}
+
+@media(min-width: 1200px) {
+.photo-page {
+
+    .main__footer .info-block {
+      height: 160px;
+      padding-top: 58px;
+    }
+
+    .main__footer {
+      max-width: 1000px;
+      .social-block {
+        padding-top: 79px;
+      }
+      .company-block {
+        padding-top: 92px;
+      }
+    }
+}
+}

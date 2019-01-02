@@ -1,0 +1,152 @@
+.comment {
+  padding: 0 6.25%;
+  overflow: hidden;
+  fieldset {
+    padding: 0;
+    margin: 0;
+    border: 0;
+  }
+  legend {
+    display: block;
+    margin: 0 auto;
+    padding-top: 38px;
+    padding-bottom: 16px;
+    width: 250px;
+    color: #d22856;
+
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  textarea {
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 201px;
+    border: 2px solid #e5e5e5;
+    padding: 19px;
+    padding-top: 14px;
+    margin-bottom: 45px;
+    border-radius: 2px;
+    outline: 0;
+    line-height: 30px;
+    transition: 0.25s;
+
+    &::placeholder {
+      font-size: 18px;
+      color: #283645;
+    }
+
+    &:hover {
+      border-color: #283645;
+    }
+
+    &:active,
+    &:focus {
+      border-color: #d22856;
+    }
+  }
+
+  p {
+    padding-top: 36px;
+    margin: 0;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 14px;
+      .span-pink {
+        color: #d22856;
+      }
+
+      .span-none {
+        display: none;
+      }
+  }
+}
+@media(min-width: 660px) {
+  .comment {
+    order: 4;
+    padding: 0 3%;
+
+      fieldset {
+        max-width: 936px;
+        margin: 0 auto;
+        min-height: 313px;
+        border: 2px solid #e5e5e5;
+        border-radius: 2px;
+        margin-top: 28px;
+      }
+
+      legend {
+        padding-top: 16px;
+      }
+
+      textarea {
+        display: block;
+        min-height: 193px;
+        width: 81%;
+        max-width: 81%;
+        min-width: 81%;
+        margin: 0 auto;
+        margin-top: 21px;
+      }
+
+      .button--rectangular {
+        float: left;
+        padding: 21px 57px 22px;
+        margin-top: 67px;
+      }
+
+      p {
+        float: right;
+        padding-top: 86px;
+      }
+  }
+
+  .comment-wrapper {
+    max-width: 936px;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 1200px) {
+  .comment {
+    width: 100%;
+
+       p {
+         padding-top: 84px;
+           .span-none {
+             display: inline;
+           }
+       }
+
+       fieldset {
+         width: 936px;
+         max-width: 100%;
+         margin-top: 41px;
+         min-height: 237px;
+       }
+
+       textarea {
+         min-height: 127px;
+         margin-top: 18px;
+         margin-bottom: 44px;
+         width: 821px;
+         min-width: 821px;
+         max-width: 821px;
+       }
+
+       .button--rectangular {
+          margin-top: 65px;
+       }
+  }
+
+  .comment-wrapper {
+    width: 940px;
+    max-width: 100%;
+    padding: 0;
+  }
+}
