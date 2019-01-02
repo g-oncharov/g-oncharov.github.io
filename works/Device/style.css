@@ -720,6 +720,7 @@ input[type="radio"].visually-hidden {
 .type-item__list {
   margin: 0;
   padding: 0;
+  display: flex;
 }
 
 .type-item__list li {
@@ -796,6 +797,7 @@ input[type="radio"].visually-hidden {
 
 .services {
   height: 288px;
+  min-width: 1217px;
   background-color: #e5e5e5;
   margin-bottom: 94px;
 }
@@ -1102,9 +1104,11 @@ margin-left: 101px;
 
 .main__footer {
   position: relative;
+  min-width: 1217px;
+  min-height: 323px;
+  
   background-color: #464646;
   color: #ffffff;
-  min-height: 323px
 }
 
 .main__footer::after {
