@@ -72,6 +72,8 @@ input[type="radio"].visually-hidden {
 }
 
 .main__header {
+  min-width: 1200px;
+
   background-color: #eeeeee;
   padding-bottom: 8px;
   padding-top: 49px;
@@ -197,6 +199,8 @@ input[type="radio"].visually-hidden {
 
 .slider {
   position: relative;
+
+  min-width: 1200px;
   background-color: #eeeeee;
 }
 
@@ -351,8 +355,10 @@ input[type="radio"].visually-hidden {
   background-color: #b5b5b5;
   background-image: url(img/map.png);
   background-position: center top;
+  
   height: 415px;
   width: 100%;
+  min-width: 1200px;
   margin-top: 80px;
   margin-bottom: 200px;
 }
