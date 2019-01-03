@@ -123,6 +123,10 @@ input[type="radio"].visually-hidden {
   border-color: #dddfe0;
   background-color: transparent; }
 
+input {
+  -webkit-box-shadow: none;
+  box-shadow: none; }
+
 .input {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;

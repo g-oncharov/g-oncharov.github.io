@@ -152,6 +152,10 @@ input[type="radio"].visually-hidden {
   background-color: transparent;
 }
 
+input {
+  box-shadow: none;
+}
+
 .input {
     box-sizing: border-box;
     width: 100%;
