@@ -64,24 +64,28 @@
       <form class="form__form">
 
         <div class="form__name">
-          <label for="surname"></label>
-          <input type="text" placeholder="Фамилия" id="surname" class="surname">
+          <form action="" method="get">
+            <label for="surname"></label>
+            <input type="text" name="surname" placeholder="Фамилия" id="surname" class="surname">
 
-          <label for="first-name"></label>
-          <input type="text" placeholder="Имя" id="first-name" class="first-name">
+            <label for="first-name"></label>
+            <input type="text" name="first-name" placeholder="Имя" id="first-name" class="first-name">
 
-          <label for="patronymic"></label>
-          <input type="text" placeholder="Отчество" id="patronymic" class="patronymic">
+            <label for="patronymic"></label>
+            <input type="text" name="patronymic" placeholder="Отчество" id="patronymic" class="patronymic">
+          </form>
         </div>
 
         <div class="form__contacts">
           <label for="telephone"></label>
-          <input type="text" placeholder="Контактный телефон" id="telephone" class="telephone">
+            <form action="" method="get">
+              <input type="text" name="telephone" placeholder="Контактный телефон" id="telephone" class="telephone">
 
-          <label for="email"></label>
-          <input type="text" placeholder="Контактный e-mail" id="email" class="email">
+              <label for="email"></label>
+              <input type="text" name="email" placeholder="Контактный e-mail" id="email" class="email">
 
-          <textarea name="name" placeholder="Доп. информация для мастера"></textarea>
+              <textarea name="name" placeholder="Доп. информация для мастера"></textarea>
+            </form>
         </div>
 
         <fieldset class="form__bread">
