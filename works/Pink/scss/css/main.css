@@ -23,11 +23,7 @@ body {
   font-display: swap; }
 
 input, button, a {
-  font: inherit;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none; }
+  font: inherit; }
 
 img {
   max-width: 100%;
