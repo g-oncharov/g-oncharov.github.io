@@ -1,0 +1,89 @@
+$Loader-color: #fff;
+$Loader-size: 12.6rem;
+$Loader-offset: 1.7rem;
+$Loader-timing: ease-in-out;
+
+.preloader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: fixed;
+  left: 0;
+  top: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: #191919;
+  transition: 1s all;
+
+  z-index: 99;
+  opacity: 1;
+  visibility: visible;
+
+  &.done {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+.loader {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: $Loader-size;
+  margin-top: $Loader-size/2;
+  margin-bottom: $Loader-size/2;
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    animation-duration: 1.8s;
+    animation-iteration-count: infinite;
+    animation-timing-function: $Loader-timing;
+    filter: drop-shadow(0 0 $Loader-offset/2.25 rgba($Loader-color, 0.75));
+  }
+  &:before {
+    width: 100%;
+    padding-bottom: 100%;
+    box-shadow: inset 0 0 0 $Loader-offset $Loader-color;
+    animation-name: pulsA;
+  }
+  &:after {
+    width: calc(100% - #{$Loader-offset}*2);
+    padding-bottom: calc(100% - #{$Loader-offset}*2);
+    box-shadow: 0 0 0 0 $Loader-color;
+    animation-name: pulsB;
+  }
+}
+
+@keyframes pulsA {
+  0% { box-shadow: inset 0 0 0 $Loader-offset $Loader-color; opacity: 1; }
+  50%, 100% { box-shadow: inset 0 0 0 0 $Loader-color; opacity: 0; }
+}
+
+@keyframes pulsB {
+  0%, 50% { box-shadow: 0 0 0 0 $Loader-color; opacity: 0; }
+  100% { box-shadow: 0 0 0 $Loader-offset $Loader-color; opacity: 1; }
+}
+
+@media(min-width:660px) {
+  $Loader-size: 14.6rem;
+  .loader {
+    max-width: $Loader-size;
+    margin-top: $Loader-size/2;
+    margin-bottom: $Loader-size/2;
+  }
+}
+
+@media(min-width:1366px) {
+  $Loader-size: 17.6rem;
+  .loader {
+    max-width: $Loader-size;
+    margin-top: $Loader-size/2;
+    margin-bottom: $Loader-size/2;
+  }
+}

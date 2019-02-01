@@ -1,11 +1,13 @@
 ﻿<!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="format-detection" content="telephone=no">
   <title>g.oncharov</title>
   <link rel="stylesheet" href="scss/css/normalize.css">
+  <link rel="stylesheet" href="scss/css/preloader.min.css">
   <link rel="stylesheet" href="scss/css/index__style.min.css">
   <link href="https://fonts.googleapis.com/css?family=Oswald:400,500&amp;subset=cyrillic" rel="stylesheet">
 
@@ -15,13 +17,18 @@
   <link rel="icon" type="image/png" href="img/fav-icon-128.png" sizes="128x128">
 </head>
 
-  <body>
-    <header class="main-header">
-        <img src="img/logo.svg" alt="g.oncharov">
-    </header>
+<body>
 
-    <main>
-      <div class="column__wrapper">
+  <div class="preloader">
+    <div class="loader"></div>
+  </div>
+
+  <header class="main-header">
+    <img src="img/logo.svg" alt="g.oncharov">
+  </header>
+
+  <main>
+    <div class="column__wrapper">
       <div class="column1">
         <section class="photo">
           <picture>
@@ -33,23 +40,23 @@
       </div>
 
       <div class="column2">
-      <section class="about-text">
-        <div class="about-text__wrapper">
-          <h3>Привет. Меня зовут<br>
-            <b>Алексей Гончаров</b>, мне 17 лет.<br>
-             Я - Front-end разработчик</h3>
+        <section class="about-text">
+          <div class="about-text__wrapper">
+            <h3>Привет. Меня зовут<br>
+              <b>Алексей Гончаров</b>, мне 17 лет.<br>
+              Я - Front-end разработчик</h3>
 
-          <p>Я Front-end разработчик без опыта работы, интересуюсь современными технологиями в мире Front-end разработки.
-            За, казалось бы, небольшое время обучения наработал
-            портфолио в которое входят разнообразные работы, начиная от верстки
-            сайта для приложения заканчивая версткой интернет-магазинов.</p>
-        </div>
-      </section>
-      <section class="skills">
-        <div class="skills__wrapper">
-          <h3>Мои навыки</h3>
+            <p>Я Front-end разработчик без опыта работы, интересуюсь современными технологиями в мире Front-end разработки.
+              За, казалось бы, небольшое время обучения наработал
+              портфолио в которое входят разнообразные работы, начиная от верстки
+              сайта для приложения заканчивая версткой интернет-магазинов.</p>
+          </div>
+        </section>
+        <section class="skills">
+          <div class="skills__wrapper">
+            <h3>Мои навыки</h3>
 
-          <ul class="skills__list">
+            <ul class="skills__list">
               <li class="skills__item">Уверенное владение HTML5</li>
               <li class="skills__item">Уверенное владение CSS3</li>
               <li class="skills__item">Использую методологию BEM</li>
@@ -64,114 +71,128 @@
               <li class="skills__item">Реализация Pixel Perfect</li>
               <li class="skills__item">Валидная верстка по стандарту W3C</li>
               <li class="skills__item">Оптимизация скорости загрузки сайта</li>
-          </ul>
+            </ul>
 
-        </div>
-      </section>
+          </div>
+        </section>
+      </div>
     </div>
-  </div>
 
-      <section class="jobs">
-        <div class="jobs__wrapper">
-          <h3>Мои работы</h3>
+    <section class="jobs">
+      <div class="jobs__wrapper">
+        <h3>Мои работы</h3>
 
-          <ul class="jobs__list">
-            <li class="jobs__item">
-              <a href="works/BarberShop/index.html">
-                  <div class="jobs__photo">
-                      <img src="img/jobs-barbershop.jpg" alt="Барбершоп">
-                  </div>
-                  <div class="jobs__info">
-                    <p>Адаптивный</p>
-                  </div>
-                  <div class="photo__block">
-                    <p>Барбершоп ''Бородинский''</p>
-                  </div>
-              </a>
-            </li>
-
-            <li class="jobs__item">
-              <a href="works/Pink/index.html">
-                  <div class="jobs__photo">
-                      <img src="img/jobs-pink.jpg" alt="Пинк">
-                  </div>
-                  <div class="jobs__info">
-                    <p>Адаптивный</p>
-                  </div>
-                  <div class="photo__block">
-                    <p>Pink</p>
-                  </div>
-              </a>
-            </li>
-
-            <li class="jobs__item">
-              <a href="works/Nerds/index.html">
-                <div class="jobs__photo">
-                    <img src="img/jobs-nerds.jpg" alt="Нердс">
-                </div>
-                <div class="jobs__info">
-                  <p>Фиксрованый</p>
-                </div>
-                <div class="photo__block">
-                  <p>Nerds</p>
-                </div>
+        <ul class="jobs__list">
+          <li class="jobs__item">
+            <a href="works/BarberShop/index.html">
+              <div class="jobs__photo">
+                <img src="img/jobs-barbershop.jpg" alt="Барбершоп">
+              </div>
+              <div class="jobs__info">
+                <p>Адаптивный</p>
+              </div>
+              <div class="photo__block">
+                <p>Барбершоп ''Бородинский''</p>
+              </div>
             </a>
-            </li>
+          </li>
 
-            <li class="jobs__item">
-              <a href="works/Device/index.html">
-                  <div class="jobs__photo">
-                      <img src="img/jobs-device.jpg" alt="Девайс">
-                  </div>
-                  <div class="jobs__info">
-                    <p>Фиксрованый</p>
-                  </div>
-                  <div class="photo__block">
-                    <p>Device</p>
-                  </div>
-              </a>
-            </li>
-          </ul>
+          <li class="jobs__item">
+            <a href="works/Pink/index.html">
+              <div class="jobs__photo">
+                <img src="img/jobs-pink.jpg" alt="Пинк">
+              </div>
+              <div class="jobs__info">
+                <p>Адаптивный</p>
+              </div>
+              <div class="photo__block">
+                <p>Pink</p>
+              </div>
+            </a>
+          </li>
 
-        </div>
-      </section>
-    </main>
+          <li class="jobs__item">
+            <a href="works/Nerds/index.html">
+              <div class="jobs__photo">
+                <img src="img/jobs-nerds.jpg" alt="Нердс">
+              </div>
+              <div class="jobs__info">
+                <p>Фиксрованый</p>
+              </div>
+              <div class="photo__block">
+                <p>Nerds</p>
+              </div>
+            </a>
+          </li>
 
-    <footer class="page-footer">
+          <li class="jobs__item">
+            <a href="works/Device/index.html">
+              <div class="jobs__photo">
+                <img src="img/jobs-device.jpg" alt="Девайс">
+              </div>
+              <div class="jobs__info">
+                <p>Фиксрованый</p>
+              </div>
+              <div class="photo__block">
+                <p>Device</p>
+              </div>
+            </a>
+          </li>
+        </ul>
 
-        <div class="page-footer__wrapper">
+      </div>
+    </section>
+  </main>
 
-          <div class="page-footer__contacts">
-              <p class="contacts__text">Украина, Краматорск, 2019 г.</p>
-              <a class="contacts__phone" href="tel:+380951373441">+38 (095) 137-34-41</a>
+  <footer class="page-footer">
 
-              <p>Почта:</p>
-              <a class="contacts__mail" href="mailto:g.oncharov.work23@gmail.com">g.oncharov.work23@gmail.com</a>
-          </div>
+    <div class="page-footer__wrapper">
 
-            <div class="page-footer__social">
+      <div class="page-footer__contacts">
+        <p class="contacts__text">Украина, Краматорск, 2019 г.</p>
+        <a class="contacts__phone" href="tel:+380951373441">+38 (095) 137-34-41</a>
 
-              <ul class="social__list">
-                <li class="social__item">
-                  <a class="social__link social__link--vkontakte" href="https://vk.com/link_1911">Я в Вконтакте</a>
-                </li>
+        <p>Почта:</p>
+        <a class="contacts__mail" href="mailto:g.oncharov.work23@gmail.com">g.oncharov.work23@gmail.com</a>
+      </div>
 
-                <li class="social__item">
-                  <a class="social__link social__link--telegram" href="http://telegram.me/thughillz">Я в Телеграмме</a>
-                </li>
+      <div class="page-footer__social">
 
-                <li class="social__item">
-                  <a class="social__link social__link--instagram" href="https://instagram.com/g.oncharov/">Я в Инстаграме</a>
-                </li>
-              </ul>
-            </div>
+        <ul class="social__list">
+          <li class="social__item">
+            <a class="social__link social__link--vkontakte" href="https://vk.com/link_1911">Я в Вконтакте</a>
+          </li>
 
-          <div class="page-footer__copyright">
-            <b class="copyright__text">Разработано:</b>
-            <img src="img/logo2.svg" alt="g.oncharov">
-          </div>
+          <li class="social__item">
+            <a class="social__link social__link--telegram" href="http://telegram.me/thughillz">Я в Телеграмме</a>
+          </li>
 
-        </div>
-    </footer>
-  </body>
+          <li class="social__item">
+            <a class="social__link social__link--instagram" href="https://instagram.com/g.oncharov/">Я в Инстаграме</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="page-footer__copyright">
+        <b class="copyright__text">Разработано:</b>
+        <img src="img/logo2.svg" alt="g.oncharov">
+      </div>
+
+    </div>
+  </footer>
+  <script type="text/javascript">
+    window.onload = function() {
+
+      setTimeout( function() {
+        var preloader = document.querySelector('.preloader');
+        if ( !preloader.classList.contains('done') )
+        {
+          preloader.classList.add('done');
+        }
+      }, 1000);
+
+    }
+  </script>
+</body>
+
 </html>
