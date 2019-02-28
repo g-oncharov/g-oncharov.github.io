@@ -1,13 +1,3 @@
-/*!
- * fullPage 3.0.4
- * https://github.com/alvarotrigo/fullPage.js
- *
- * @license GPLv3 for open source use only
- * or Fullpage Commercial License for commercial use
- * http://alvarotrigo.com/fullPage/pricing/
- *
- * Copyright (C) 2018 http://alvarotrigo.com/fullPage - A project by Alvaro Trigo
- */
 (function( root, window, document, factory, undefined) {
     if( typeof define === 'function' && define.amd ) {
         // AMD. Register as an anonymous module.
@@ -2442,7 +2432,7 @@
                             previousHeight = currentHeight;
 
                             //issue #3336
-                            //when using Chrome we add a small timeout to get the right window height 
+                            //when using Chrome we add a small timeout to get the right window height
                             //https://stackoverflow.com/a/12556928/1081396
                             //https://stackoverflow.com/questions/13807810/ios-chrome-detection
                         }, navigator.userAgent.match('CriOS') ? 50 : 0);
