@@ -16,7 +16,6 @@
 
 .skills__list {
   padding: 15px 0;
-  // max-width: 305px;
 }
 .skills__item {
   position: relative;
@@ -84,120 +83,30 @@
 }
 
 @media(min-width: 1200px) {
-  .skills__list {
-    width: 510px;
-    height: auto;
-    min-height: 416px;
-  }
-
-  .skills__item {
-    width: 230px;
-  }
-}
-
-@media(min-width: 1280px) {
-  .skills__list {
-    min-height: 468px;
-  }
-}
-
-@media(min-width: 1360px) {
-  .skills__list {
-    min-height: 523px;
-    width: 560px;
-  }
-
-  .skills__item {
-    width: 255px;
-  }
-}
-
-@media(min-width: 1440px) {
-  .skills__list {
-    min-height: 606px;
-    width: 610px;
-  }
-
-  .skills__item {
-    width: 280px;
-    font-size: 18px;
-  }
-}
-
-@media(min-width: 1500px) {
-  .skills__list {
-    min-height: 645px;
-    width: 630px;
-  }
-
-  .skills__item {
-    width: 290px;
-  }
-}
-
-@media(min-width: 1536px) {
-  .skills__list {
-    min-height: 670px;
-  }
-}
-
-@media(min-width: 1600px) {
-  .skills__list {
-    min-height: 713px;
-    width: 670px;
-  }
-
-  .skills__item {
-    width: 308px;
-  }
-}
-
-@media(min-width: 1680px) {
-  .skills__list {
-    min-height: 765px;
-  }
-}
-
-@media(min-width: 1745px) {
-  .skills__list {
-    min-height: 794px;
-    width: 710px;
-    padding-top: 30px;
-  }
-
-  .skills__item {
-    width: 330px;
-    font-size: 22px;
-  }
-}
-
-@media(min-width: 1920px) {
-  .skills__list {
-    min-height: 908px;
-    width: 805px;
-    padding-top: 40px;
-  }
-
-  .skills__item {
-    width: 376px;
-    font-size: 22px;
-  }
-}
-
-@media(min-width: 2560px) {
   .skills {
+    height: 100%;
     h3 {
-      font-size: 28px;
+      font-size: 50px;
+      margin-bottom: 60px;
     }
   }
+  .skills__wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
   .skills__list {
-    min-height: 1330px;
-    width: 1075px;
-    padding-top: 60px;
+    width: 100%;
+    height: 70%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
   }
 
   .skills__item {
-    width: 500px;
-    font-size: 26px;
+    width: 400px;
+    font-size: 24px;
   }
 }

@@ -133,3 +133,46 @@
     width: 770px;
   }
 }
+
+@media (min-width: 1200px) {
+  .page-footer {
+    height: 100%;
+  }
+
+  .page-footer__wrapper {
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .page-footer__copyright {
+    order: 1;
+    padding-bottom: 65px;
+    width: 900px;
+
+    .copyright__text {
+      display: none;
+    }
+  }
+
+  .page-footer__social {
+    order: 3;
+    width: 950px;
+  }
+
+  .page-footer__contacts {
+    order: 2;
+    padding-bottom: 70px;
+
+    p {
+      font-size: 32px;
+      padding-bottom: 18px;
+    }
+
+    a {
+      font-size: 20px;
+    }
+  }
+}

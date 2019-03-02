@@ -23,9 +23,13 @@
   .main-header {
     height: 100px;
     padding-top: 25px;
-    background-image: url(../../img/header-bg.png);
       img {
         width: 240px;
       }
+  }
+}
+@media(min-width: 1200px) {
+  .main-header {
+    display: none;
   }
 }

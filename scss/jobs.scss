@@ -22,18 +22,6 @@
       text-decoration: none;
       transition: 2s;
     }
-    // a:hover::after {
-    //   content: "";
-    //   position: absolute;
-    //   left: 0;
-    //   top: 0;
-    //   width: 100%;
-    //   height: 100%;
-    //   background-color: #000;
-    //   opacity: 0.2;
-    // }
-    // a:hover {
-    // }
     a:hover img {
       transform: scale(1.05);
       transition: 2s;
@@ -123,16 +111,28 @@
   }
 }
 
-@media(min-width: 1920px) {
+@media(min-width: 1200px) {
   .jobs {
-    padding: 0;
-      h3 {
-        font-size: 28px;
-      }
+    height: 100%;
+    h3 {
+      font-size: 50px;
+      padding: 10px 0;
+      margin-bottom: 60px;
+    }
   }
 
+  .jobs__list {
+    width: 100%;
+    margin: 0 auto;
+  }
   .jobs__wrapper {
-    width: 1760px;
-    padding-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+  }
+
+  .jobs__item {
+    width: 48%;
   }
 }

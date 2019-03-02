@@ -48,23 +48,19 @@
 }
 @media(min-width: 1200px) {
   .about-text {
-    background-color: #ffffff;
-    box-shadow: inset 0px 3px 13px -5px rgba(50, 50, 50, 0.75);
+    width: 40%;
+    padding: 0 3.5%;
+    margin-left: auto;
+    // border: 10px solid white;
     h3 {
       width: 440px;
+      color: #ffffff;
     }
-  }
-}
-
-@media(min-width: 2560px) {
-  .about-text {
-    h3 {
-      width: 560px;
-      font-size: 28px;
+    b {
+      color: #000000;
     }
-
     p {
-      font-size: 20px;
+      color: #ffffff;
     }
   }
 }
