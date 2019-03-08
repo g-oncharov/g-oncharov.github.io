@@ -3,6 +3,26 @@
   background-color: #191919;
 }
 
+@font-face {
+  font-family: 'Oswald';
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+  src: local('Oswald Regular'), local('Oswald-Regular'),
+       url('../../fonts/oswald-v16-latin_cyrillic-regular.woff2') format('woff2'),
+       url('../../fonts/oswald-v16-latin_cyrillic-regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Oswald';
+  font-display: swap;
+  font-style: normal;
+  font-weight: 500;
+  src: local('Oswald Medium'), local('Oswald-Medium'),
+       url('../../fonts/oswald-v16-latin_cyrillic-500.woff2') format('woff2'),
+       url('../../fonts/oswald-v16-latin_cyrillic-500.woff') format('woff');
+}
+
 body {
   font-family: "Oswald", Arial, sans-serif;
   margin: 0;
