@@ -53,10 +53,14 @@
 
   transition: 2s;
 
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+
     p {
       width: 100px;
       margin: 0 auto;
-      margin-top: 108px;
 
       text-align: center;
       background-color: #000;
@@ -121,18 +125,27 @@
     }
   }
 
+  .jobs__photo {
+    height: 88%;
+  }
+
+  .jobs__info {
+    height: 88%;
+  }
+
   .jobs__list {
     width: 100%;
+    height: 100%;
     margin: 0 auto;
   }
   .jobs__wrapper {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     height: 100%;
   }
 
   .jobs__item {
     width: 48%;
+    height: 44%;
   }
 }
