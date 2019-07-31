@@ -14,32 +14,32 @@
         </form>
         <table>
             <tr>
-              <td><button class="button" type="button" value="C" onclick="clean()"></td>
-              <td><button class="button" type="button" value="<" onclick="back()"></td>
-              <td><button class="button" type="button" value="/" onclick="insert('/')"></td>
-              <td><button class="button" type="button" value="x" onclick="insert('*')"></td>
+              <td><button class="button" type="button" onclick="clean()">C</td>
+              <td><button class="button" type="button" onclick="back()"><</td>
+              <td><button class="button" type="button" onclick="insert('/')">/</td>
+              <td><button class="button" type="button" onclick="insert('*')">x</td>
             </tr>
             <tr>
-              <td><button class="button" type="button" value="7" onclick="insert(7)"></td>
-              <td><button class="button" type="button" value="8" onclick="insert(8)"></td>
-              <td><button class="button" type="button" value="9" onclick="insert(9)"></td>
-              <td><button class="button" type="button" value="-" onclick="insert('-')"></td>
+              <td><button class="button" type="button" onclick="insert(7)">7</td>
+              <td><button class="button" type="button" onclick="insert(8)">8</td>
+              <td><button class="button" type="button" onclick="insert(9)">9</td>
+              <td><button class="button" type="button" onclick="insert('-')">-</td>
             </tr>
             <tr>
-              <td><button class="button" type="button" value="4" onclick="insert(4)"></td>
-              <td><button class="button" type="button" value="5" onclick="insert(5)"></td>
-              <td><button class="button" type="button" value="6" onclick="insert(6)"></td>
-              <td><button class="button" type="button" value="+" onclick="insert('+')"></td>
+              <td><button class="button" type="button" onclick="insert(4)">4</td>
+              <td><button class="button" type="button" onclick="insert(5)">5</td>
+              <td><button class="button" type="button" onclick="insert(6)">6</td>
+              <td><button class="button" type="button" onclick="insert('+')">+</td>
             </tr>
             <tr>
-              <td><button class="button" type="button" value="1" onclick="insert(1)"></td>
-              <td><button class="button" type="button" value="2" onclick="insert(2)"></td>
-              <td><button class="button" type="button" value="3" onclick="insert(3)"></td>
-              <td rowspan="2"><button class="button" type="button" value="=" style="height: 138px" onclick="equal()"></td>
+              <td><button class="button" type="button" onclick="insert(1)">1</td>
+              <td><button class="button" type="button" onclick="insert(2)">2</td>
+              <td><button class="button" type="button" onclick="insert(3)">3</td>
+              <td rowspan="2"><button class="button" type="button" style="height: 138px" onclick="equal()">=</td>
             </tr>
             <tr>
-              <td colspan="2"><button class="button" type="button" value="0" style="width: 138px" onclick="insert(0)"></td>
-              <td><button class="button" type="button" value="." onclick="insert('.')"></td>
+              <td colspan="2"><button class="button" type="button" style="width: 138px" onclick="insert(0)">0</td>
+              <td><button class="button" type="button" onclick="insert('.')">.</td>
             </tr>
         </table>
       </div>
