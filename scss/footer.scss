@@ -134,9 +134,10 @@
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1199px) {
   .page-footer {
     height: 100%;
+    position: relative;
   }
 
   .page-footer__wrapper {

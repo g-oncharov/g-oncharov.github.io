@@ -1,17 +1,20 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html lang="ru">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="format-detection" content="telephone=no">
-  <meta name="theme-color" content="#191919"/>
+  <meta name="theme-color" content="#191919" />
   <meta name="author" lang="ru" content="Алексей Гончаров" />
   <meta name="Description" content="Привет. Меня зовут Алексей Гончаров, мне 17 лет. Я - Front-end разработчик">
   <meta name="robots" content="all">
   <title>g.oncharov</title>
   <link rel="stylesheet" href="scss/css/normalize.min.css">
   <link rel="stylesheet" href="scss/css/preloader.min.css">
+  <link rel="stylesheet" href="scss/css/fullpage.min.css">
+  <link rel="stylesheet" href="scss/css/examples.min.css">
   <link rel="stylesheet" href="scss/css/index__style.min.css">
 
   <link rel="icon" type="image/png" href="img/fav-icon-16.png" sizes="16x16">
@@ -38,7 +41,7 @@
         <li></li>
         <li></li>
       </ul>
-  </div>
+    </div>
 
   </div>
 
@@ -47,16 +50,16 @@
     <img src="img/logo.svg" alt="g.oncharov">
   </header>
 
-<div id="fullpage">
+  <div id="fullpage">
 
-        <div class="section">
-        <div class="section-wrapper">
-          <section class="photo">
-            <h2 class="visually-hidden">Моя фотография</h2>
-            <img src="img/photo-1.jpg" alt="Алексей Гончаров">
+    <div class="section">
+      <div class="section-wrapper">
+        <section class="photo">
+          <h2 class="visually-hidden">Моя фотография</h2>
+          <img src="img/photo-1.jpg" alt="Алексей Гончаров">
         </section>
 
-          <section class="about-text">
+        <section class="about-text">
           <div class="about-text__wrapper">
             <h3>Привет. Меня зовут<br>
               <b>Алексей Гончаров</b>, мне 17 лет.<br>
@@ -68,47 +71,68 @@
               сайта для приложения заканчивая версткой интернет-магазинов.</p>
           </div>
         </section>
-        </div>
-        </div>
-        <div class="section">
-          <section class="skills">
-            <div class="skills__wrapper">
-              <h3>Мои навыки</h3>
+      </div>
+    </div>
+    <div class="section">
+      <section class="skills">
+        <div class="skills__wrapper">
+          <h3>Мои навыки</h3>
 
-              <ul class="skills__list">
-                <li class="skills__item">Уверенное владение HTML5</li>
-                <li class="skills__item">Уверенное владение CSS3</li>
-                <li class="skills__item">Использую методологию BEM</li>
-                <li class="skills__item">Владею препроцессорами LESS, SASS</li>
-                <li class="skills__item">jQuery, понимание основ JavaScript</li>
-                <li class="skills__item">Опыт с системой контроля версий GIT</li>
-                <li class="skills__item">Система сборки проектов Gulp</li>
-                <li class="skills__item">Работаю с изображениями в Adobe Photoshop</li>
-                <li class="skills__item">Блочная фиксированная / резиновая верстка.</li>
-                <li class="skills__item">Кроссбраузерная верстка</li>
-                <li class="skills__item">Работаю со спрайтами</li>
-                <li class="skills__item">Реализация Pixel Perfect</li>
-                <li class="skills__item">Валидная верстка по стандарту W3C</li>
-                <li class="skills__item">Оптимизация скорости загрузки сайта</li>
-              </ul>
+          <ul class="skills__list">
+            <li class="skills__item">Уверенное владение HTML5</li>
+            <li class="skills__item">Уверенное владение CSS3</li>
+            <li class="skills__item">Использую методологию BEM</li>
+            <li class="skills__item">Владею препроцессорами LESS, SASS</li>
+            <li class="skills__item">jQuery, понимание основ JavaScript</li>
+            <li class="skills__item">Опыт с системой контроля версий GIT</li>
+            <li class="skills__item">Система сборки проектов Gulp</li>
+            <li class="skills__item">Работаю с изображениями в Adobe Photoshop</li>
+            <li class="skills__item">Блочная фиксированная / резиновая верстка.</li>
+            <li class="skills__item">Кроссбраузерная верстка</li>
+            <li class="skills__item">Работаю со спрайтами</li>
+            <li class="skills__item">Реализация Pixel Perfect</li>
+            <li class="skills__item">Валидная верстка по стандарту W3C</li>
+            <li class="skills__item">Оптимизация скорости загрузки сайта</li>
+          </ul>
 
-            </div>
-          </section>
         </div>
+      </section>
+    </div>
 
-        <div class="section">
-          <section class="jobs">
-            <div class="jobs__wrapper">
+    <div class="section">
+      <section class="jobs">
+        <div class="slider1">
+          <input type="radio" id="btn-1" name="toggle" checked>
+          <input type="radio" id="btn-2" name="toggle">
+          <div class="slider1-controls">
+            <label for="btn-1"></label>
+            <label for="btn-2"></label>
+          </div>
+          <div class="slides1">
+            <div class="jobs__wrapper slide1">
               <h3>Мои работы</h3>
 
               <ul class="jobs__list">
+                <li class="jobs__item">
+                  <a href="works/Calculator/index.html">
+                    <div class="jobs__photo">
+                      <img src="img/jobs-calculator.jpg" alt="Калькулятор">
+                    </div>
+                    <div class="jobs__info">
+                      <p>HTML/CSS/JS</p>
+                    </div>
+                    <div class="photo__block">
+                      <p>Калькулятор</p>
+                    </div>
+                  </a>
+                </li>
                 <li class="jobs__item">
                   <a href="works/BarberShop/index.html">
                     <div class="jobs__photo">
                       <img src="img/jobs-barbershop.jpg" alt="Барбершоп">
                     </div>
                     <div class="jobs__info">
-                      <p>Адаптивный</p>
+                      <p>HTML/CSS Responsive</p>
                     </div>
                     <div class="photo__block">
                       <p>Барбершоп ''Бородинский''</p>
@@ -122,7 +146,7 @@
                       <img src="img/jobs-pink.jpg" alt="Пинк">
                     </div>
                     <div class="jobs__info">
-                      <p>Адаптивный</p>
+                      <p>HTML/CSS Responsive</p>
                     </div>
                     <div class="photo__block">
                       <p>Pink</p>
@@ -136,21 +160,27 @@
                       <img src="img/jobs-nerds.jpg" alt="Нердс">
                     </div>
                     <div class="jobs__info">
-                      <p>Фиксрованый</p>
+                      <p>HTML/CSS</p>
                     </div>
                     <div class="photo__block">
                       <p>Nerds</p>
                     </div>
                   </a>
                 </li>
+              </ul>
+            </div>
 
+            <div class="jobs__wrapper slide1">
+              <h3>Мои работы</h3>
+
+              <ul class="jobs__list">
                 <li class="jobs__item">
                   <a href="works/Device/index.html">
                     <div class="jobs__photo">
                       <img src="img/jobs-device.jpg" alt="Девайс">
                     </div>
                     <div class="jobs__info">
-                      <p>Фиксрованый</p>
+                      <p>HTML/CSS</p>
                     </div>
                     <div class="photo__block">
                       <p>Device</p>
@@ -158,50 +188,50 @@
                   </a>
                 </li>
               </ul>
-
             </div>
-          </section>
+          </div>
         </div>
-
-
-  <div class="section">
-  <footer class="page-footer">
-
-    <div class="page-footer__wrapper">
-
-      <div class="page-footer__contacts">
-        <p class="contacts__text">Украина, Краматорск, 2019 г.</p>
-        <a class="contacts__phone" href="tel:+380951373441">+38 (095) 137-34-41</a>
-
-        <p>Почта:</p>
-        <a class="contacts__mail" href="mailto:g.oncharov.work23@gmail.com">g.oncharov.work23@gmail.com</a>
-      </div>
-
-      <div class="page-footer__social">
-
-        <ul class="social__list">
-          <li class="social__item">
-            <a class="social__link social__link--vkontakte" href="https://vk.com/link_1911">Я в Вконтакте</a>
-          </li>
-
-          <li class="social__item">
-            <a class="social__link social__link--telegram" href="http://telegram.me/thughillz">Я в Телеграмме</a>
-          </li>
-
-          <li class="social__item">
-            <a class="social__link social__link--instagram" href="https://instagram.com/g.oncharov/">Я в Инстаграме</a>
-          </li>
-        </ul>
-      </div>
-
-      <div class="page-footer__copyright">
-        <b class="copyright__text">Разработано:</b>
-        <img src="img/logo2.svg" alt="g.oncharov">
-      </div>
-
+      </section>
     </div>
-  </footer>
-  </div>
+
+    <div class="section">
+      <footer class="page-footer">
+
+        <div class="page-footer__wrapper">
+
+          <div class="page-footer__contacts">
+            <p class="contacts__text">Украина, Краматорск, 2019 г.</p>
+            <a class="contacts__phone" href="tel:+380951373441">+38 (095) 137-34-41</a>
+
+            <p>Почта:</p>
+            <a class="contacts__mail" href="mailto:g.oncharov.work23@gmail.com">g.oncharov.work23@gmail.com</a>
+          </div>
+
+          <div class="page-footer__social">
+
+            <ul class="social__list">
+              <li class="social__item">
+                <a class="social__link social__link--vkontakte" href="https://vk.com/link_1911">Я в Вконтакте</a>
+              </li>
+
+              <li class="social__item">
+                <a class="social__link social__link--telegram" href="http://telegram.me/thughillz">Я в Телеграмме</a>
+              </li>
+
+              <li class="social__item">
+                <a class="social__link social__link--instagram" href="https://instagram.com/g.oncharov/">Я в Инстаграме</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="page-footer__copyright">
+            <b class="copyright__text">Разработано:</b>
+            <img src="img/logo2.svg" alt="g.oncharov">
+          </div>
+
+        </div>
+      </footer>
+    </div>
 
   </div>
   <script src="js/fullpage.min.js"></script>
