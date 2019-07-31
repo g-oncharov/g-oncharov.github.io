@@ -27,6 +27,9 @@ body {
   border: none;
   color: white;
   outline: none;
+  border-radius: 0;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
 }
 .button:hover {
   background-color: #5d6484;
@@ -41,4 +44,6 @@ body {
   border: none;
   color: #5d6484;
   outline: none;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
 }
