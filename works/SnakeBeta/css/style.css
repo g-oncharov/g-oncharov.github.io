@@ -1,0 +1,58 @@
+*{
+    box-sizing: border-box;
+}
+body {
+  margin: 100px;
+}
+
+.button {
+  visibility: hidden;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  color: #fff;
+  font-weight: bold;
+  background-color: #3b48ef;
+  border: rebeccapurple;
+  border-radius: 5px;
+  border: 0;
+  padding: 10px;
+  transition: 0.25s;
+  cursor:pointer;
+}
+.button:hover {
+  background-color: #1f2ef5;
+  box-shadow: 1px 1px 7px 0px #3b48ef;
+}
+
+.showed {
+  visibility: visible;
+}
+.field {
+  width: 500px;
+  height: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #000000;
+}
+
+.excel {
+  width: 50px;
+  height: 50px;
+  padding: 5px;
+}
+
+.snakeBody {
+  background-color: #0eff37;
+  box-shadow: 0px 0px 5px 0px #0eff37;
+}
+
+.snakeHead {
+  background-color: #0eff37;
+}
+
+.mouse {
+  background-color: #f00;
+  box-shadow: 0px 0px 5px 0px #f00;
+}
