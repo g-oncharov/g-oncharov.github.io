@@ -1,8 +1,10 @@
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
+
 body {
-  margin: 100px;
+  display: flex;
+  flex-direction: column;
 }
 
 .button {
@@ -18,17 +20,85 @@ body {
   border: 0;
   padding: 10px;
   transition: 0.25s;
-  cursor:pointer;
+  cursor: pointer;
 }
+
 .button:hover {
   background-color: #1f2ef5;
   box-shadow: 1px 1px 7px 0px #3b48ef;
 }
 
+.control {
+  width: 250px;
+  height: 150px;
+  margin: 0 auto;
+  margin-top: 25px;
+  order: 2;
+}
+
+.control-up {
+  margin: 0 auto;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.control-down {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.button-control {
+  display: block;
+  width: 50px;
+  height: 50px;
+  margin: 0 5px;
+  padding: 0;
+  font-size: 0;
+  background-color: #6f6f6f;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.button-control::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  width: 50px;
+  height: 50px;
+  background-image: url('../img/arrow.svg');
+  background-size: 25px 25px;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.button-control-up::before {
+  transform: rotate(-90deg);
+}
+
+.button-control-right::before {
+  transform: rotate(0deg);
+}
+
+.button-control-down::before {
+  transform: rotate(90deg);
+}
+
+.button-control-left::before {
+  transform: rotate(-180deg);
+}
+
 .showed {
   visibility: visible;
 }
+
 .field {
+  order: 1;
   width: 500px;
   height: 500px;
   margin: 0 auto;
@@ -44,15 +114,22 @@ body {
 }
 
 .snakeBody {
-  background-color: #0eff37;
-  box-shadow: 0px 0px 5px 0px #0eff37;
+  background-color: #0eff9b;
+  box-shadow: 0px 0px 5px 0px #0eff9b;
+  position: relative;
+  z-index: 2;
 }
 
 .snakeHead {
-  background-color: #0eff37;
+  background-color: #00c4ff;
+  box-shadow: 0px 0px 5px 0px #00c4ff;
+  position: relative;
+  z-index: 2;
 }
 
 .mouse {
-  background-color: #f00;
-  box-shadow: 0px 0px 5px 0px #f00;
+  background-color: #ff0032;
+  box-shadow: 0px 0px 5px 0px #ff0032;
+  position: relative;
+  z-index: 1;
 }

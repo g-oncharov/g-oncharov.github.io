@@ -1,3 +1,5 @@
+// Создазданиее игрового поля
+
 let field = document.createElement('div');
 document.body.appendChild(field);
 field.classList.add('field');
@@ -7,6 +9,8 @@ for (let i = 0; i < 100; i++) {
   field.appendChild(excel);
   excel.classList.add('excel');
 }
+
+// Нумераия игрового поля
 
 let excel = document.getElementsByClassName('excel');
 let x = 1;
@@ -21,6 +25,8 @@ for (let i = 0; i < excel.length; i++) {
   excel[i].setAttribute('posY', y);
   x++;
 }
+
+// Создазданиее Змеии
 
 function generateSnake() {
   let posX = Math.round(Math.random() * (10 - 3) + 3 );
@@ -42,6 +48,8 @@ for (let i = 0; i < snakeBody.length; i++) {
 
 snakeBody[0].classList.add('snakeHead');
 
+// Создазданиее мыши
+
 let mouse;
 
 function createMouse() {
@@ -61,6 +69,8 @@ function createMouse() {
   mouse.classList.add('mouse')
 }
 createMouse()
+
+// Движение змеии
 
 let direction = 'right';
 let steps = false;
@@ -107,6 +117,8 @@ function move() {
       }
   }
 
+// Поедание мыши и наростание змеии
+
   if (snakeBody[0].getAttribute('posX') == mouse.getAttribute('posX') && snakeBody[0].getAttribute('posY') == mouse.getAttribute('posY')) {
     mouse.classList.remove('mouse');
     let a = snakeBody[snakeBody.length - 1].getAttribute('posX');
@@ -114,6 +126,8 @@ function move() {
     snakeBody.push(document.querySelector('[posX ="' + a + '"][posY = "' + b +'"]'));
     createMouse();
   }
+
+// Исправление мыши
 
   if (snakeBody[0].classList.contains('snakeBody')) {
     setTimeout(function () {
@@ -138,6 +152,7 @@ function move() {
 
 let interval = setInterval(move, 300);
 
+// Управление На кнопки
 
 window.addEventListener('keydown', function(e) {
   if (steps == true) {
@@ -163,6 +178,47 @@ window.addEventListener('keydown', function(e) {
       }
   }
 });
+
+// Управление На клики
+
+document.querySelector('.button-control-up').addEventListener('click', function(e) {
+  if (steps == true) {
+      if(direction != 'down') {
+        e.preventDefault();
+        direction = 'up'
+        steps = false;
+      }
+  }
+});
+document.querySelector('.button-control-down').addEventListener('click', function(e) {
+  if (steps == true) {
+      if(direction != 'up') {
+        e.preventDefault();
+        direction = 'down'
+        steps = false;
+      }
+  }
+});
+document.querySelector('.button-control-right').addEventListener('click', function(e) {
+  if (steps == true) {
+      if(direction != 'left') {
+        e.preventDefault();
+        direction = 'right'
+        steps = false;
+      }
+  }
+});
+document.querySelector('.button-control-left').addEventListener('click', function(e) {
+  if (steps == true) {
+      if(direction != 'right') {
+        e.preventDefault();
+        direction = 'left'
+        steps = false;
+      }
+  }
+});
+
+// Перезагрузка игры и страницы
 
 document.querySelector('.button').addEventListener('click', function () {
   location.reload()
