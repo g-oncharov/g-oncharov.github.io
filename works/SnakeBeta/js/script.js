@@ -74,6 +74,7 @@ createMouse()
 
 let direction = 'right';
 let steps = false;
+let score = 0;
 
 function move() {
   let snakeCoordinates = [snakeBody[0].getAttribute('posX'), snakeBody[0].getAttribute('posY')];
@@ -125,6 +126,7 @@ function move() {
     let b = snakeBody[snakeBody.length - 1].getAttribute('posY');
     snakeBody.push(document.querySelector('[posX ="' + a + '"][posY = "' + b +'"]'));
     createMouse();
+    score++;
   }
 
 // Исправление мыши
@@ -136,7 +138,9 @@ function move() {
 
     clearInterval(interval);
     setTimeout(function () {
-      document.querySelector('.button').classList.add('showed')
+      document.querySelector('.text-block').innerHTML = '<p>Ваш счет: <strong>' + score + '</b></p>';
+      document.querySelector('.text-block').classList.add('showed');
+      document.querySelector('.button').classList.add('showed');
     }, 500);
 
   }
