@@ -1,229 +1,203 @@
-// Создазданиее игрового поля
-
-let field = document.createElement('div');
-document.body.appendChild(field);
-field.classList.add('field');
-
-for (let i = 0; i < 100; i++) {
-  let excel = document.createElement('div');
-  field.appendChild(excel);
-  excel.classList.add('excel');
+window.onload = function() {
+  document.addEventListener('keydown', changeDirection);
+  setInterval(loop, 1000/60); // 60 FPS
 }
 
-// Нумераия игрового поля
+var
+  canv 				= document.getElementById('mc'), // canvas
+  ctx					= canv.getContext('2d'), // 2d context
+  gs = fkp			= false, // game started && first key pressed (initialization states)
+  speed = baseSpeed 	= 3, // snake movement speed
+  xv = yv				= 0, // velocity (x & y)
+  px 					= ~~(canv.width) / 2, // player X position
+  py 					= ~~(canv.height) / 2, // player Y position
+  pw = ph				= 20, // player size
+  aw = ah				= 20, // apple size
+  apples				= [], // apples list
+  trail				= [], // tail elements list (aka trail)
+  tail 				= 100, // tail size (1 for 10)
+  tailSafeZone		= 20, // self eating protection for head zone (aka safeZone)
+  cooldown			= false, // is key in cooldown mode
+  score				= 0; // current score
 
-let excel = document.getElementsByClassName('excel');
-let x = 1;
-let y = 10;
+// game main loop
+function loop()
+{
+  // logic
+  ctx.fillStyle = 'black';
+  ctx.fillRect(0, 0, canv.width, canv.height);
 
-for (let i = 0; i < excel.length; i++) {
-  if (x > 10) {
-    x = 1;
-    y--;
+  // force speed
+  px += xv;
+  py += yv;
+
+  // teleports
+  if( px > canv.width )
+    {px = 0;}
+
+  if( px + pw < 0 )
+    {px = canv.width;}
+
+  if( py + ph < 0 )
+    {py = canv.height;}
+
+  if( py > canv.height )
+    {py = 0;}
+
+  // paint the snake itself with the tail elements
+  ctx.fillStyle = 'lime';
+  for( var i = 0; i < trail.length; i++ )
+  {
+    ctx.fillStyle = trail[i].color || 'lime';
+    ctx.fillRect(trail[i].x, trail[i].y, pw, ph);
   }
-  excel[i].setAttribute('posX', x);
-  excel[i].setAttribute('posY', y);
-  x++;
+
+  trail.push({x: px, y: py, color: ctx.fillStyle});
+
+  // limiter
+  if( trail.length > tail )
+  {
+    trail.shift();
+  }
+
+  // eaten
+  if( trail.length > tail )
+  {
+    trail.shift();
+  }
+
+  // self collisions
+  if( trail.length >= tail && gs )
+  {
+    for( var i = trail.length - tailSafeZone; i >= 0; i-- )
+    {
+      if(
+        px < (trail[i].x + pw)
+        && px + pw > trail[i].x
+        && py < (trail[i].y + ph)
+        && py + ph > trail[i].y
+      )
+      {
+        // got collision
+        tail = 10; // cut the tail
+        speed = baseSpeed; // cut the speed (flash nomore lol xD)
+
+        for( var t = 0; t < trail.length; t++ )
+        {
+          // highlight lossed area
+          trail[t].color = 'red';
+
+          if( t >= trail.length - tail )
+            {break;}
+        }
+      }
+    }
+  }
+
+  // paint apples
+  for( var a = 0; a < apples.length; a++ )
+  {
+    ctx.fillStyle = apples[a].color;
+    ctx.fillRect(apples[a].x, apples[a].y, aw, ah);
+  }
+
+  // check for snake head collisions with apples
+  for( var a = 0; a < apples.length; a++ )
+  {
+    if(
+      px < (apples[a].x + pw)
+      && px + pw > apples[a].x
+      && py < (apples[a].y + ph)
+      && py + ph > apples[a].y
+    )
+    {
+      // got collision with apple
+      apples.splice(a, 1); // remove this apple from the apples list
+      tail += 10; // add tail length
+      speed += .1; // add some speed
+      spawnApple(); // spawn another apple(-s)
+      break;
+    }
+  }
 }
 
-// Создазданиее Змеии
+// apples spawner
+function spawnApple() {
+  var
+    newApple = {
+      x: ~~(Math.random() * canv.width),
+      y: ~~(Math.random() * canv.height),
+      color: 'red'
+    };
 
-function generateSnake() {
-  let posX = Math.round(Math.random() * (10 - 3) + 3 );
-  let posY = Math.round(Math.random() * (10 - 1) + 1 );
-  return[posX, posY];
+  // forbid to spawn near the edges
+  if(
+    (newApple.x < aw || newApple.x > canv.width - aw)
+    ||
+    (newApple.y < ah || newApple.y > canv.height - ah)
+  )
+  {
+    spawnApple();
+    return;
+  }
+
+  // check for collisions with tail element, so no apple will be spawned in it
+  for( var i = 0; i < tail.length; i++ )
+  {
+    if(
+      newApple.x < (trail[i].x + pw)
+      && newApple.x + aw > trail[i].x
+      && newApple.y < (trail[i].y + ph)
+      && newApple.y + ah > trail[i].y
+    )
+    {
+      // got collision
+      spawnApple();
+      return;
+    }
+  }
+
+  apples.push(newApple);
+
+  if( apples.length < 3 && ~~(Math.random() * 1000) > 700 ) {
+    // 30% chance to spawn one more apple
+    spawnApple();
+  }
 }
 
-let coordinates = generateSnake();
-
-let snakeBody = [
-document.querySelector('[posX = "' + coordinates[0] + '"][posY = "' + coordinates[1] + '"]'),
-document.querySelector('[posX = "' + (coordinates[0] - 1) + '"][posY = "' + coordinates[1] + '"]'),
-document.querySelector('[posX = "' + (coordinates[0] - 2) + '"][posY = "' + coordinates[1] + '"]')
-];
-
-for (let i = 0; i < snakeBody.length; i++) {
-  snakeBody[i].classList.add('snakeBody');
+// random color generator (for debugging purpose or just 4fun)
+function rc()
+{
+  return '#' + ((~~(Math.random() * 255)).toString(16)) + ((~~(Math.random() * 255)).toString(16)) + ((~~(Math.random() * 255)).toString(16));
 }
 
-snakeBody[0].classList.add('snakeHead');
-
-// Создазданиее мыши
-
-let mouse;
-
-function createMouse() {
-  function generateMouse() {
-    let posX = Math.round(Math.random() * (10 - 3) + 3 );
-    let posY = Math.round(Math.random() * (10 - 1) + 1 );
-    return [posX, posY];
-  }
-  let mouseCoordinates = generateMouse();
-  mouse = document.querySelector('[posX = "' + mouseCoordinates[0] + '"][posY = "' + mouseCoordinates[1] + '"]');
-
-  while(mouse.classList.contains('snakeBody')){
-      let mouseCoordinates = generateMouse();
-      mouse = document.querySelector('[posX = "' + mouseCoordinates[0] + '"][posY = "' + mouseCoordinates[1] + '"]');
+// velocity changer (controls)
+function changeDirection(e) {
+  if( !fkp && [37,38,39,40].indexOf(e.keyCode) > -1 )
+  {
+    setTimeout(function() {gs = true;}, 1000);
+    fkp = true;
+    spawnApple();
   }
 
-  mouse.classList.add('mouse')
+  if( cooldown )
+    {return false;}
+
+  /*
+    4 directional movement.
+   */
+  if( e.keyCode == 37 && !(xv > 0) ) // left arrow
+    {xv = -speed; yv = 0;}
+
+  if( e.keyCode == 38 && !(yv > 0) ) // top arrow
+    {xv = 0; yv = -speed;}
+
+  if( e.keyCode == 39 && !(xv < 0) ) // right arrow
+    {xv = speed; yv = 0;}
+
+  if( e.keyCode == 40 && !(yv < 0) ) // down arrow
+    {xv = 0; yv = speed;}
+
+  cooldown = true;
+  setTimeout(function() {cooldown = false;}, 100);
 }
-createMouse()
-
-// Движение змеии
-
-let direction = 'right';
-let steps = false;
-let score = 0;
-
-function move() {
-  let snakeCoordinates = [snakeBody[0].getAttribute('posX'), snakeBody[0].getAttribute('posY')];
-  snakeBody[0].classList.remove('snakeHead');
-  snakeBody[snakeBody.length-1].classList.remove('snakeBody');
-  snakeBody.pop();
-
-// right move
-  if (direction == 'right') {
-      if(snakeCoordinates[0] < 10) {
-        snakeBody.unshift(document.querySelector('[posX = "' + (+snakeCoordinates[0] + 1) + '"][posY = "' + snakeCoordinates[1] + '"]'));
-      } else {
-        snakeBody.unshift(document.querySelector('[posX = "1"][posY = "' + snakeCoordinates[1] + '"]'));
-      }
-  }
-
-// left move
-  else if (direction == 'left') {
-      if(snakeCoordinates[0] > 1) {
-        snakeBody.unshift(document.querySelector('[posX = "' + (+snakeCoordinates[0] - 1) + '"][posY = "' + snakeCoordinates[1] + '"]'));
-      } else {
-        snakeBody.unshift(document.querySelector('[posX = "10"][posY = "' + snakeCoordinates[1] + '"]'));
-      }
-  }
-
-// up move
-  else if (direction == 'up') {
-      if(snakeCoordinates[1] < 10) {
-        snakeBody.unshift(document.querySelector('[posX = "' + snakeCoordinates[0] + '"][posY = "' + (+snakeCoordinates[1] + 1) + '"]'));
-      } else {
-        snakeBody.unshift(document.querySelector('[posX = "' + snakeCoordinates[0] + '"][posY = "1"]'));
-      }
-  }
-
-// down move
-  else if (direction == 'down') {
-      if(snakeCoordinates[1] > 1) {
-        snakeBody.unshift(document.querySelector('[posX = "' + snakeCoordinates[0] + '"][posY = "' + (snakeCoordinates[1] - 1) + '"]'));
-      } else {
-        snakeBody.unshift(document.querySelector('[posX = "' + snakeCoordinates[0] + '"][posY = "10"]'));
-      }
-  }
-
-// Поедание мыши и наростание змеии
-
-  if (snakeBody[0].getAttribute('posX') == mouse.getAttribute('posX') && snakeBody[0].getAttribute('posY') == mouse.getAttribute('posY')) {
-    mouse.classList.remove('mouse');
-    let a = snakeBody[snakeBody.length - 1].getAttribute('posX');
-    let b = snakeBody[snakeBody.length - 1].getAttribute('posY');
-    snakeBody.push(document.querySelector('[posX ="' + a + '"][posY = "' + b +'"]'));
-    createMouse();
-    score++;
-  }
-
-// Исправление мыши
-
-  if (snakeBody[0].classList.contains('snakeBody')) {
-    setTimeout(function () {
-      alert('Игра окончена!');
-    }, 200);
-
-    clearInterval(interval);
-    setTimeout(function () {
-      document.querySelector('.text-block').innerHTML = '<p>Ваш счет: <strong>' + score + '</b></p>';
-      document.querySelector('.text-block').classList.add('showed');
-      document.querySelector('.button').classList.add('showed');
-    }, 500);
-
-  }
-
-  snakeBody[0].classList.add('snakeHead');
-  for (let i = 0; i < snakeBody.length; i++) {
-    snakeBody[i].classList.add('snakeBody');
-  }
-
-  steps = true;
-}
-
-
-let interval = setInterval(move, 300);
-
-// Управление На кнопки
-
-window.addEventListener('keydown', function(e) {
-  if (steps == true) {
-      if(e.keyCode == 37 && direction != 'right') {
-        e.preventDefault();
-        direction = 'left'
-        steps = false;
-      }
-      else if(e.keyCode == 38 && direction != 'down') {
-        e.preventDefault();
-        direction = 'up'
-        steps = false;
-      }
-      else if(e.keyCode == 39 && direction != 'left') {
-        e.preventDefault();
-        direction = 'right'
-        steps = false;
-      }
-      else if(e.keyCode == 40 && direction != 'up') {
-        e.preventDefault();
-        direction = 'down'
-        steps = false;
-      }
-  }
-});
-
-// Управление На клики
-
-document.querySelector('.button-control-up').addEventListener('click', function(e) {
-  if (steps == true) {
-      if(direction != 'down') {
-        e.preventDefault();
-        direction = 'up'
-        steps = false;
-      }
-  }
-});
-document.querySelector('.button-control-down').addEventListener('click', function(e) {
-  if (steps == true) {
-      if(direction != 'up') {
-        e.preventDefault();
-        direction = 'down'
-        steps = false;
-      }
-  }
-});
-document.querySelector('.button-control-right').addEventListener('click', function(e) {
-  if (steps == true) {
-      if(direction != 'left') {
-        e.preventDefault();
-        direction = 'right'
-        steps = false;
-      }
-  }
-});
-document.querySelector('.button-control-left').addEventListener('click', function(e) {
-  if (steps == true) {
-      if(direction != 'right') {
-        e.preventDefault();
-        direction = 'left'
-        steps = false;
-      }
-  }
-});
-
-// Перезагрузка игры и страницы
-
-document.querySelector('.button').addEventListener('click', function () {
-  location.reload()
-});
