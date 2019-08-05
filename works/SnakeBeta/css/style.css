@@ -81,7 +81,7 @@ body {
   display: block;
   width: 50px;
   height: 50px;
-  background-image: url('../src/img/arrow.svg');
+  background-image: url('../img/arrow.svg');
   background-size: 25px 25px;
   background-repeat: no-repeat;
   background-position: 50% 50%;
