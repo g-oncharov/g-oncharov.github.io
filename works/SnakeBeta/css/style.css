@@ -1,22 +1,49 @@
-html, body {
-  padding: 0;
-  margin: 0;
-}
-
 * {
   box-sizing: border-box;
 }
 
-canvas {
-  display: block;
-  margin: 0 auto;
-  background-color: #000;
+body {
+  display: flex;
+  flex-direction: column;
 }
+.block {
+  height: 105px;
+}
+.text-block {
+  visibility: hidden;
+  margin: 0 auto;
+}
+.text-block p {
+  text-align: center;
+  font-family: sans-serif;
+}
+.button {
+  display: block;
+  visibility: hidden;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  color: #fff;
+  font-weight: bold;
+  background-color: #3b48ef;
+  border: rebeccapurple;
+  border-radius: 5px;
+  border: 0;
+  padding: 10px;
+  transition: 0.25s;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #1f2ef5;
+  box-shadow: 1px 1px 7px 0px #3b48ef;
+}
+
 .control {
   width: 250px;
   height: 150px;
   margin: 0 auto;
   margin-top: 25px;
+  order: 2;
 }
 
 .control-up {
@@ -54,7 +81,7 @@ canvas {
   display: block;
   width: 50px;
   height: 50px;
-  background-image: url('../img/arrow.svg');
+  background-image: url('../src/img/arrow.svg');
   background-size: 25px 25px;
   background-repeat: no-repeat;
   background-position: 50% 50%;
@@ -78,4 +105,55 @@ canvas {
 
 .showed {
   visibility: visible;
+}
+
+.field {
+  order: 1;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #000000;
+  box-shadow: 0px 0px 5px 0px #000000;
+}
+
+.excel {
+  width: 15px;
+  height: 15px;
+  padding: 5px;
+}
+
+.snakeBody {
+  background-color: #0eff9b;
+  box-shadow: 0px 0px 5px 0px #0eff9b;
+  position: relative;
+  z-index: 2;
+}
+
+.snakeHead {
+  background-color: #00c4ff;
+  box-shadow: 0px 0px 5px 0px #00c4ff;
+  position: relative;
+  z-index: 2;
+}
+
+.mouse {
+  background-color: #ff0032;
+  box-shadow: 0px 0px 5px 0px #ff0032;
+  position: relative;
+  z-index: 1;
+}
+
+@media (min-width:520px) {
+  .field {
+    width: 500px;
+    height: 500px;
+  }
+
+  .excel {
+    width: 25px;
+    height: 25px;
+    padding: 5px;
+  }
 }
