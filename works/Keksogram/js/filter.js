@@ -38,7 +38,7 @@ const filterfx = () => {
         document.querySelector('.effect-image-preview').style.filter = `invert(100%)`;
         filterHandler('invert', '%');
       }else if (evt.target.classList.contains('upload-effect-phobos')) {
-        document.querySelector('.effect-image-preview').style.filter = `invert(10px)`;
+        document.querySelector('.effect-image-preview').style.filter = `blur(10px)`;
         filterHandler('blur', 'px');
       }else if (evt.target.classList.contains('upload-effect-heat')) {
         document.querySelector('.effect-image-preview').style.filter = `brightness(1.5)`;
