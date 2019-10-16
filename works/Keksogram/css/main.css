@@ -69,7 +69,7 @@ body {
 
   width: 581px;
   height: 569px;
-  margin: 27px 0 0 -293px;
+  margin: 27px 0 0 -285px;
   padding: 0;
 
   background: url("../img/logo-background-1.jpg");
@@ -316,7 +316,7 @@ body {
 
 .upload-effect-label {
   display: inline-block;
-  margin: 0 5px;
+  margin: 0 3px;
 
   font: 14px "Open Sans Condensed";
   font-weight: 700;
@@ -732,7 +732,7 @@ border-color: #ffe753; }
 
   padding: 0 10px;
 
-  font-size: 45px;
+  font-size: 75px;
   text-align: center;
   color: #ffffff;
 
