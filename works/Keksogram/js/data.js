@@ -27,11 +27,15 @@ let backgroundIndex = 1;
 const openPopup = (selector) => {
   document.querySelector(selector).classList.remove('hidden');
   document.body.style.overflow = 'hidden';
+  document.documentElement.style.overflow = 'hidden';
+  document.body.style.position = 'relative';
 }
 
 const closePopup = (selector) => {
   document.querySelector(selector).classList.add('hidden');
   document.body.style.overflow = 'auto';
+  document.documentElement.style.overflow = 'auto';
+  document.body.style.position = 'static';
 }
 
 let corX;
