@@ -9,7 +9,7 @@ const imgSize = () => {
 const imgSizeOp = (v) => {
   let photoW = parseInt(document.querySelector('.effect-image-preview').getAttribute('width'));
   let photoH = parseInt(document.querySelector('.effect-image-preview').getAttribute('height'));
-  if (v == 'plus') {
+  if (v == 'plus' && photoW <= 700 && photoH <= 600) {
     photoW += (photoW / 100) * 5;
     photoH += (photoH / 100) * 5 ;
   }else if (v == 'minus' && photoW >= 550 && photoH >= 500) {
