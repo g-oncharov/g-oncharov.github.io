@@ -29,16 +29,19 @@ const sliderMove = () => {
 
       document.querySelector('.upload-effect-level').addEventListener('mouseout',() => {
         document.querySelector('.upload-effect-level').removeEventListener('mousemove', onMouseMove);
+        document.querySelector('.upload-effect-level').removeEventListener('touchmove', onMouseMove);
       })
     };
 
     const onMouseUp = function (upEvt) {
       upEvt.preventDefault();
       document.querySelector('.upload-effect-level').removeEventListener('mousemove', onMouseMove);
+      document.querySelector('.upload-effect-level').removeEventListener('touchmove', onMouseMove);
       document.querySelector('.upload-effect-level').removeEventListener('mouseup', onMouseUp);
     };
 
     document.querySelector('.upload-effect-level').addEventListener('mousemove', onMouseMove);
+    document.querySelector('.upload-effect-level').addEventListener('touchmove', onMouseMove);
     document.querySelector('.upload-effect-level').addEventListener('mouseup', onMouseUp);
   };
 };
