@@ -5,7 +5,7 @@ function readURL(evt) {
         let reader = new FileReader();
         reader.addEventListener('load', (evt) => {
           document.querySelector('.effect-image-preview').src = evt.target.result;
-          setTimeout(imgSize,1)
+          setTimeout(imgSize,100)
         });
         reader.readAsDataURL(this.files[0]);
     }
