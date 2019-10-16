@@ -2,6 +2,6 @@ var myFullpage = new fullpage('#fullpage', {
     sectionsColor: ['rgba(0,0,0,0)', '#191919', '#ffffff', '#191919'],
     navigation: true,
     navigationPosition: 'right',
-    responsiveWidth: 1350,
-    responsiveHeight: 680
+    responsiveWidth: 1200,
+    responsiveHeight: 600
 });
