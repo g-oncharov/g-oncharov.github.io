@@ -367,6 +367,7 @@ border-color: #ffe753; }
 
   background: rgba(0, 0, 0, 0.6);
   border-radius: 33px;
+  display: none;
 }
 
 .upload-effect-level-line {
@@ -670,8 +671,8 @@ border-color: #ffe753; }
   .container {
     width: 1380px;
   }
-  .upload-form {
-    margin: 27px 0 0 -292px;
+  .upload-effect-level {
+    display: block;
   }
   .picture:nth-of-type(2n-1):nth-of-type(-n+6) {
     margin-right: 12px;
@@ -683,7 +684,9 @@ border-color: #ffe753; }
     margin-right: 600px;
   }
 }
-
+.upload-form {
+  margin: 27px 0 0 -292px;
+}
 @media (max-width: 1419px) {
   .picture:nth-child(1) {
     margin-right: 600px;
