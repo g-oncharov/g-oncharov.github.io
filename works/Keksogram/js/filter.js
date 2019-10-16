@@ -11,7 +11,6 @@ let filterSet = (name, unit) => {
     document.querySelector('.effect-image-preview').style.filter = `${name}(${number}${unit})`;
   }else if (name == 'none' && unit == '') {
     document.querySelector('.effect-image-preview').style.filter = `opacity(0%)`;
-    console.log(1);
   }
 }
 let filterHandler = (name, unit) => {
@@ -30,14 +29,19 @@ const filterfx = () => {
         document.querySelector('.effect-image-preview').style.filter = `opacity(100%)`;
         });
       }else if (evt.target.classList.contains('upload-effect-chrome')) {
+        document.querySelector('.effect-image-preview').style.filter = `grayscale(100%)`;
         filterHandler('grayscale', '%');
       }else if (evt.target.classList.contains('upload-effect-sepia')) {
+        document.querySelector('.effect-image-preview').style.filter = `sepia(100%)`;
         filterHandler('sepia', '%');
       }else if (evt.target.classList.contains('upload-effect-marvin')) {
+        document.querySelector('.effect-image-preview').style.filter = `invert(100%)`;
         filterHandler('invert', '%');
       }else if (evt.target.classList.contains('upload-effect-phobos')) {
+        document.querySelector('.effect-image-preview').style.filter = `invert(10px)`;
         filterHandler('blur', 'px');
       }else if (evt.target.classList.contains('upload-effect-heat')) {
+        document.querySelector('.effect-image-preview').style.filter = `brightness(1.5)`;
         filterHandler('brightness', '');
       }
     }
