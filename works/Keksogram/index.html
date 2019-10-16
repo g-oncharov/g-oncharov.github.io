@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700|Open+Sans&subset=latin,cyrillic">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="icon" type="image/png" href="img/fav-icon-128.png" sizes="128x128">
+  <title>Кексограм</title>
+</head>
+<body>
+
+<form class="upload-form" id="upload-select-image" method="post"
+      enctype="multipart/form-data"
+      autocomplete="off">
+  <div class="upload-image">
+    <input type="file" id="upload-file" class="upload-input" name="filename" required multiple>
+    <label class="upload-file upload-control" for="upload-file"></label>
+  </div>
+
+  <div class="upload-overlay hidden">
+    <div class="upload-effect">
+      <div class="upload-effect__container">
+        <fieldset class="upload-resize-controls">
+          <button type="button"
+                  class="upload-resize-control upload-resize-controls-button upload-resize-controls-button-dec">–
+          </button><!--
+          --><input type="text" class="upload-resize-control upload-resize-controls-value" value="Size" readonly title="Image Scale" name="scale"/><!--
+          --><button type="button"
+                  class="upload-resize-control upload-resize-controls-button upload-resize-controls-button-inc">+
+          </button>
+        </fieldset>
+        <div class="upload-form-preview-wrapper">
+                <div class="upload-form-preview">
+                  <img src="" class="effect-image-preview" id="effect-image-preview">
+                </div>
+        </div>
+
+
+        <fieldset class="upload-effect-controls">
+            <div class="upload-effect-level">
+              <div class="upload-effect-level-line">
+                <div class="upload-effect-level-pin"></div>
+                <div class="upload-effect-level-val"></div>
+              </div>
+            </div>
+          <input type="radio" name="effect" id="upload-effect-none" value="none" checked>
+          <label class="upload-effect-label" for="upload-effect-none">
+            <div class="upload-effect-preview upload-effect-none"></div>
+            Оригинал
+          </label>
+
+          <input type="radio" name="effect" id="upload-effect-chrome" value="chrome">
+          <label class="upload-effect-label upload-effect-label-chrome" for="upload-effect-chrome">
+            <div class="upload-effect-preview upload-effect-chrome"></div>
+            Хром
+          </label>
+
+          <input type="radio" name="effect" id="upload-effect-sepia" value="sepia">
+          <label class="upload-effect-label upload-effect-label-sepia" for="upload-effect-sepia">
+            <div class="upload-effect-preview upload-effect-sepia"></div>
+            Сепия
+          </label>
+
+          <input type="radio" name="effect" id="upload-effect-marvin" value="marvin">
+          <label class="upload-effect-label upload-effect-label-marvin" for="upload-effect-marvin">
+            <div class="upload-effect-preview upload-effect-marvin"></div>
+            Марвин
+          </label>
+
+          <input type="radio" name="effect" id="upload-effect-phobos" value="phobos">
+          <label class="upload-effect-label upload-effect-label-phobos" for="upload-effect-phobos">
+            <div class="upload-effect-preview upload-effect-phobos"></div>
+            Фобос
+          </label>
+
+          <input type="radio" name="effect" id="upload-effect-heat" value="heat">
+          <label class="upload-effect-label upload-effect-label-heat" for="upload-effect-heat">
+            <div class="upload-effect-preview upload-effect-heat"></div>
+            Зной
+          </label>
+        </fieldset>
+
+        <input class="upload-form-hashtags" name="hashtags" placeholder="#Хеш-теги">
+
+        <textarea class="upload-form-description" name="description" placeholder="Ваш комментарий..."></textarea>
+
+        <button class="upload-form-cancel" type="reset" id="upload-cancel"></button>
+        <button class="upload-form-submit" type="submit" id="upload-submit">Отправить</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="upload-message hidden">
+    <div class="upload-message-container"></div>
+  </div>
+</form>
+
+<div class="pictures container" style="font-size: 12px;">
+</div>
+
+<footer class="footer container">
+  <div class="center-wrapper">
+    <section class="footer-logo">
+      <a tabindex="1" href="https://g-oncharov.github.io" class="footer-logo-link">
+        <img src="img/logo.svg" class="footer-logo-image" height="55" alt="goncharov"/>
+      </a>
+    </section>
+  </div>
+</footer>
+
+
+<div class="gallery-overlay hidden">
+  <span class="gallery-overlay-close">&times;</span>
+  <div class="gallery-overlay-preview-wrapper">
+    <div class="gallery-overlay-preview">
+      <img src="" class="gallery-overlay-image" alt="">
+      <p class="gallery-overlay-description"></p>
+      <div class="gallery-overlay-controls">
+        <div class="gallery-overlay-controls-like">Нравится <span class="likes-count">0</span></div>
+        <div class="gallery-overlay-controls-comments"><span class="comments-count">125</span> комментариев</div>
+      </div>
+        <div class="gallery-overlay-comments">
+          <ul class="gallery-overlay-comment__list">
+            <li class="gallery-overlay-comment__item">
+              <div>
+               <p class="gallery-overlay__text">Комментарии скрыты настройками приватности</p>
+              </div>
+            </li>
+        </ul>
+        </div>
+    </div>
+  </div>
+</div>
+<div id="elem">
+  <template id="picture-template" style="display: none">
+    <a href="" class="picture">
+      <div class="picture-wrapper">
+        <img id="img" src="" height="230">
+      </div>
+      <span class="picture-stats">
+        <span class="picture-stat picture-comments"></span>
+        <span class="picture-stat picture-likes"></span>
+      </span>
+    </a>
+  </template>
+</div>
+<script src="js/data.js"></script>
+<script src="js/render-photo.js"></script>
+<script src="js/upload-photo.js"></script>
+<script src="js/filter.js"></script>
+<script src="js/resizing.js"></script>
+<script src="js/slider-photo.js"></script>
+<script src="js/validation.js"></script>
+<script src="js/handlers.js"></script>
+<script src="js/slider-background.js"></script>
+</body>
+</html>
