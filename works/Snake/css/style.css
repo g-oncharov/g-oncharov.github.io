@@ -6,7 +6,7 @@ body {
   display: flex;
   flex-direction: column;
   background-image: linear-gradient(110deg, #1ee9b1, #3f4eb5);
-  height: 100vh;
+  background-attachment: fixed;
 }
 .block {
   height: 105px;
