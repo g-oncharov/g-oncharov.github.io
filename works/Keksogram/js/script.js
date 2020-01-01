@@ -223,8 +223,34 @@ const validation = (evt) => {
       	closePopup('.upload-overlay');
       }
   }
+
+  let imgSrc = document.querySelector('.effect-image-preview').src;
+  let photoW = parseInt(document.querySelector('.effect-image-preview').getAttribute('width'));
+  let photoH = parseInt(document.querySelector('.effect-image-preview').getAttribute('height'));
+  document.querySelector('#elem2').src = imgSrc;
+  document.querySelector('#elem2').width = photoW;
+  document.querySelector('#elem2').height = photoH;
+  arrPhotoInformation.unshift({
+      url: imgSrc,
+      likes: 0,
+      comments: 0,
+      description: arrayDescription[random(0,13)]
+  })
+
+  const pictureTemplate = document.querySelector('#picture-template').content;
+  pictureTemplate.querySelector('img').src = imgSrc;
+  pictureTemplate.querySelector('.picture-likes').innerText = 0;
+  pictureTemplate.querySelector('.picture-comments').innerText = 0;
+    
+  document.querySelector('.pictures').appendChild(pictureTemplate.cloneNode(true));
+
+  console.log(arrPhotoInformation);
+  console.log(photoW);
+  console.log(photoH);
+
 }
 document.querySelector('.upload-form-submit').addEventListener('click', validation);
+
 const viewImages = () => {
   backgroundIndex++;
     if (backgroundIndex > 3) {
@@ -244,6 +270,3 @@ document.querySelector('.upload-resize-controls-button-dec').addEventListener('c
 
 document.querySelector('.gallery-overlay-close').addEventListener('click', () => closePopup('.gallery-overlay'));
 document.querySelector('#upload-cancel').addEventListener('click', () => closePopup('.upload-overlay'));
-
-
-
