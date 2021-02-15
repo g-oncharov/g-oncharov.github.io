@@ -80,6 +80,7 @@ input[type="radio"].visually-hidden {
   padding: 12px 0 13px;
   border: 1px solid #e5ddd5;
   color: #000000;
+  transition: 0.3s;
 }
 .button:hover {
   border-color: #d5cabe;
@@ -412,6 +413,7 @@ input[type="radio"].visually-hidden {
     height: 100%;
     border: none;
     line-height: 20px;
+    transition: 0.3s;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
   }
@@ -498,6 +500,7 @@ input[type="radio"].visually-hidden {
   .main-nav .site-list__item a,
   .main-nav .user-list__item a {
     padding: 26px 33px 26px 32px;
+    transition: 0.5s;
   }
   .main-nav .site-list__item a:hover,
   .main-nav .user-list__item a:hover {
@@ -1082,6 +1085,8 @@ input[type="radio"].visually-hidden {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  transition: 0.3s;
+  cursor: pointer;
 }
 .news__date:after {
   content: "";
@@ -1091,6 +1096,8 @@ input[type="radio"].visually-hidden {
   width: 50px;
   height: 10px;
   background-image: url(../img/corner-black.svg);
+  transition: 0.3s;
+  cursor: pointer;
 }
 .news__date:hover {
   background-color: #826550;
@@ -1121,17 +1128,16 @@ input[type="radio"].visually-hidden {
   padding-top: 12px;
   width: 100%;
 }
+
 .news__text a {
   color: #000000;
   text-decoration: none;
   display: block;
+  transition: 0.3s;
 }
+
 .news__text a:hover {
   color: #826550;
-  text-decoration: underline;
-}
-.news__text a:active {
-  color: #6a4d38;
   text-decoration: underline;
 }
 
@@ -1267,9 +1273,7 @@ input[type="radio"].visually-hidden {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: flex-start;
   margin: 0 auto;
   min-height: 155px;
   width: 100%;
@@ -1455,6 +1459,7 @@ input[type="radio"].visually-hidden {
     background-repeat: no-repeat;
     background-position: 50% 50%;
     outline: none;
+    cursor: pointer;
   }
   .reviews .reviews__prev:hover,
   .reviews .reviews__next:hover {
@@ -1614,6 +1619,7 @@ input[type="radio"].visually-hidden {
   border-bottom: 1px solid #3f3f3f;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  transition: 0.3s;
 }
 .social__list .social__item:hover {
   border-color: #545454;
@@ -2076,8 +2082,8 @@ input[type="radio"].visually-hidden {
   }
   .modal__login .block-button .button--close {
     position: absolute;
-    right: -104px;
-    top: 61px;
+    right: -41px;
+    top: 4px;
     background-color: transparent;
     margin: 0;
     padding: 0;
@@ -2129,4 +2135,3 @@ input[type="radio"].visually-hidden {
     width: 460px;
   }
 }
-/*# sourceMappingURL=index.css.map */

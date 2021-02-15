@@ -313,7 +313,10 @@ input[type="radio"].visually-hidden {
   width: 35px;
   height: 35px;
   border: 1px solid #e5ddd5;
-  background-color: #ffffff; }
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
 
 .filters__input--checkbox + label:hover::before {
   border-color: #d5c9bd; }
@@ -360,6 +363,7 @@ input[type="radio"].visually-hidden {
   color: #ffffff;
   background-color: #826550;
   outline: 0;
+  cursor: pointer;
   transition: 0.25s; }
 
 .button--filters:hover {
@@ -400,7 +404,8 @@ input[type="radio"].visually-hidden {
     width: 100%;
     flex-direction: row;
     justify-content: flex-start;
-    margin-bottom: 29px; }
+    margin-bottom: 29px;
+  }
     .form__name .first-name {
       order: -1; }
     .form__name .surname {
@@ -411,7 +416,9 @@ input[type="radio"].visually-hidden {
       box-sizing: border-box;
       font-size: 24px;
       padding: 18px 0 19px;
-      padding-left: 24px; }
+      padding-left: 24px;
+      transition: 0.3s;
+    }
 
   .form__contacts {
     width: 100%; }
@@ -518,6 +525,7 @@ input[type="radio"].visually-hidden {
       padding-left: 60px;
       margin-bottom: 47px; }
       .form__add .filters-add__option label {
+        cursor: pointer;
         font-size: 24px; }
     .form__add .filters-add__option:nth-child(1) {
       order: 1; }
@@ -766,8 +774,8 @@ input[type="radio"].visually-hidden {
         color: #978374; }
       .modal__login .block-button .button--close {
         position: absolute;
-        right: -104px;
-        top: 61px;
+        right: -41px;
+        top: 4px;
         background-color: transparent;
         margin: 0;
         padding: 0;

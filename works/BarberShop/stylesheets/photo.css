@@ -1022,8 +1022,8 @@ input[type="radio"].visually-hidden {
   }
   .modal__login .block-button .button--close {
     position: absolute;
-    right: -104px;
-    top: 61px;
+    right: -41px;
+    top: 4px;
     background-color: transparent;
     margin: 0;
     padding: 0;
@@ -1075,5 +1075,3 @@ input[type="radio"].visually-hidden {
     width: 460px;
   }
 }
-
-/*# sourceMappingURL=photo.css.map */
