@@ -58,6 +58,8 @@ input[type="radio"].visually-hidden {
   padding: 13px 42px;
   text-transform: uppercase;
   outline: none;
+  transition: 1.25s;
+  cursor: pointer;
 }
 
 .button:focus,
@@ -73,19 +75,18 @@ input[type="radio"].visually-hidden {
 
 .main__header {
   min-width: 1200px;
-
   background-color: #eeeeee;
   padding-bottom: 8px;
   padding-top: 49px;
 }
 
+.main__header img {
+  transition: 0.3s;
+}
+
 .main__header img:focus,
 .main__header img:hover {
   opacity: 0.8;
-}
-
-.main__header img:active {
-  opacity: 0.3;
 }
 
 .main-navigation {
@@ -103,6 +104,7 @@ input[type="radio"].visually-hidden {
 .main-navigation a {
   color: #000000;
   outline: 0;
+  transition: 0.3s;
 }
 
 .main-navigation a:hover,
@@ -355,7 +357,7 @@ input[type="radio"].visually-hidden {
   background-color: #b5b5b5;
   background-image: url(img/map.png);
   background-position: center top;
-  
+
   height: 415px;
   width: 100%;
   min-width: 1200px;
@@ -366,7 +368,6 @@ input[type="radio"].visually-hidden {
 .contacts iframe {
   z-index: 1;
 }
-
 .contacts__info {
   position: relative;
   background-color: #ffffff;
@@ -447,6 +448,7 @@ input[type="radio"].visually-hidden {
   background-color: #eeeeee;
   height: 230px;
   opacity: 0;
+  transition: 0.5s;
 }
 
 .catalog__wrapper:hover .catalog-block {
@@ -489,6 +491,7 @@ input[type="radio"].visually-hidden {
   width: 360px;
   height: 616px;
   margin-top: 40px;
+  transition: 0.5s;
 }
 
 .catalog__wrapper:hover {
@@ -540,6 +543,7 @@ input[type="radio"].visually-hidden {
   border-radius: 3px;
   border: 3px solid #eeeeee;
   margin-right: 11px;
+  transition: box-shadow 0.3s;
 }
 
 .pagination-item--current {
@@ -554,11 +558,9 @@ input[type="radio"].visually-hidden {
 }
 
 .pagination-item:active {
-  width: 50px;
-  height: 47px;
-  padding-top: 3px;
+  padding: 3px;
 
-  border: none;
+  border: 0;
   background-color: #d5d5d5;
   box-shadow: inset 0px 3px 0px #bfbfbf;
   color: #a9a9a9
@@ -582,6 +584,7 @@ input[type="radio"].visually-hidden {
   margin-right: 0;
   font-size: 16px;
   line-height: 18px;
+  transition: 0.3s;
 }
 
 .pagination-item--next:hover,
@@ -626,6 +629,7 @@ input[type="radio"].visually-hidden {
 
 .sorting__item {
   color: #cacaca;
+  transition: 0.3s;
 }
 
 .sorting__item:hover,
@@ -655,7 +659,8 @@ input[type="radio"].visually-hidden {
   background-image: url(img/icon-up-dir.svg);
   background-repeat: no-repeat;
   background-position: 0 0;
-  opacity: 0.1
+  opacity: 0.1;
+  transition: 0.3s;
 }
 
 .sorting__item-nav-up:hover::after,
@@ -718,7 +723,6 @@ input[type="radio"].visually-hidden {
 .filter-item {
   margin: 0;
   padding: 0;
-
   border: none;
 }
 
@@ -846,6 +850,7 @@ input[type="radio"].visually-hidden {
 
 .filters__input--checkbox + label:hover::before {
   opacity: 1;
+  transition: opacity 1.25s;
 }
 
 .filters__input--checkbox:checked + label::before {
@@ -893,6 +898,7 @@ input[type="radio"].visually-hidden {
   background-repeat: no-repeat;
   background-position: 0 0;
   opacity: 0.4;
+  transition: opacity 1.25s;
 }
 
 .filters__input--radio + label:hover::before,
@@ -1140,7 +1146,7 @@ input[type="radio"].visually-hidden {
   margin-right: 0;
 }
 
-.logo-block__partners  img {
+.logo-block__partners img {
   position: absolute;
   top: 0;
   right: 0;
@@ -1150,6 +1156,7 @@ input[type="radio"].visually-hidden {
   max-width: 100%;
   height: auto;
   opacity: 0.2;
+  transition: 0.5s;
 }
 
 .logo-block__partners img:hover {
@@ -1158,10 +1165,6 @@ input[type="radio"].visually-hidden {
 
 .logo-block__partners a:focus {
   opacity: 1;
-}
-
-.logo-block__partners img:active {
-  opacity: 0.1;
 }
 
 .about-us__info-block__list {
@@ -1215,16 +1218,12 @@ input[type="radio"].visually-hidden {
   background-color: #e1e1e1;
   border-radius: 50px;
   outline: 0;
+  transition: 1s;
 }
 
 .icon:focus,
 .icon:hover {
   background-color: #e74246;
-}
-
-.icon:active {
-  background-color: #d7373b;
-  box-shadow: inset 0px 3px 0px #c13135;
 }
 
 .icon--vk::after {
@@ -1438,7 +1437,7 @@ input[type="radio"].visually-hidden {
 }
 
 .modal-login textarea:focus::placeholder {
-    opacity: 1;
+  opacity: 1;
 }
 
 .modal-login__block {
